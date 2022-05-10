@@ -2,7 +2,7 @@ package com.upskill;
 
 public class Stack {
 
-    private int top;
+    private Node top;
     private int size;
 
 
@@ -20,5 +20,12 @@ public class Stack {
 //            top = current;
 //        }
 //        size++;
+    }
+
+    public int pull() {
+        final int data = top.getData();
+        top = top.getNext();
+        size--;
+        return data;
     }
 }
