@@ -3,7 +3,10 @@ package com.upskill;
 public class Node {
 
     private int data;
-    private Node next;
+    private Node next; //proximo elemento da lista, referência ou apontador para o seguinte
+
+    public Node() {
+    }
 
     public Node(int data) {
         this.data = data;
