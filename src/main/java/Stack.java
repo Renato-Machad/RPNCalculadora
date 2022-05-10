@@ -3,6 +3,10 @@ public class Stack {
     private static Node top;
     private int size;
 
+    public Stack() {
+        size = 0;
+    }
+
     public int getSize() {
         return size;
     }
