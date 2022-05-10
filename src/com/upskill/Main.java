@@ -18,9 +18,10 @@ public class Main {
 
             stack.push(Integer.parseInt(value));
 
-            System.out.println("Continue Y/N?");
+            System.out.println("Add another value Y/N?");
             value = read.nextLine();
         } while (value.equalsIgnoreCase("y"));
+        System.out.println(stack);
         System.out.println(stack);
 
         //Escolher uma opção
@@ -38,6 +39,9 @@ public class Main {
         if (option == 14) {
             stack.convertIntoNegative(stack.getTop().getData());
             System.out.println(stack);
+        }
+        if (option == 3) {
+            System.out.println(Stack.listNodes());
         }
     }
 }
