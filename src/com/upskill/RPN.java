@@ -1,14 +1,9 @@
 package com.upskill;
 
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Scanner;
-
 public class RPN {
     private static Stack stack;
 
-    public RPN()
-    {
+    public RPN() {
         stack = new Stack();
     }
 
@@ -18,38 +13,31 @@ public class RPN {
 
         if (expr.isEmpty()) return 0;
 
-        do
-        {
-
+        do {
             int space = expr.substring(start).indexOf(' ');
             int end = space == -1 ? expr.length() : start + space;
 
-            String current = expr.substring(start,end);
+            String current = expr.substring(start, end);
 
-            if("+-*/".indexOf(current.charAt(0)) != -1)
-            {
+            if ("+-*/".indexOf(current.charAt(0)) != -1) {
                 int a = stack.pull();
                 int b = stack.pull();
-                stack.push(operation(current.charAt(0),b,a));
-            }
-            else
-            {
+                stack.push(operation(current.charAt(0), b, a));
+            } else {
                 stack.push(Integer.parseInt(current));
             }
             start = end + 1;
-        }while(start < expr.length());
+        } while (start < expr.length());
 
         int result = stack.pull();
 
-        while(!stack.isEmpty())
-        {
+        while (!stack.isEmpty()) {
             int current = stack.pull();
             result = current > result ? current : result;
         }
 
         return result;
     }
-
 
     public static int operation(char operand, int a, int b) {
 

@@ -5,11 +5,13 @@ public class Stack {
     private static Node top;
     private int size;
 
-
     public int getSize() {
         return size;
     }
 
+    public Node getTop() {
+        return top;
+    }
 
     public void push(int data) {
         if (top == null) // stack nao tem nada
@@ -33,6 +35,13 @@ public class Stack {
         return data;
     }
 
+    public void convertIntoNegative(int lastInput) {
+        pull();
+        int negative = lastInput * (-1);
+        lastInput = negative;
+        push(lastInput);
+    }
+
     public boolean isEmpty() {
         return true;
     }
@@ -52,5 +61,10 @@ public class Stack {
             return "List: " + result;
         } else
             return "A lista está vazia";
+    }
+
+    @Override
+    public String toString() {
+        return top.toString();
     }
 }
