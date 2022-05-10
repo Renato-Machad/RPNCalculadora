@@ -11,13 +11,13 @@ public class Stack {
     }
 
 
-    public void push(double data){
-        if(top == null)
+    public void push(int data){
+        if(top == null) // stack nao tem nada
             top = new Node(data);
         else
         {
-            Node current = new Node(data,top);
-            top = current;
+            Node numb = new Node(data,top);
+            top = numb;
         }
         size++;
     }
