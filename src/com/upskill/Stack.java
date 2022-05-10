@@ -21,4 +21,11 @@ public class Stack {
         }
         size++;
     }
+
+    public int pull() {
+        final int data = top.getData();
+        top = top.getNext();
+        size--;
+        return data;
+    }
 }
