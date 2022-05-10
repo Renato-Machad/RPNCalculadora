@@ -14,7 +14,7 @@ public class Node {
         this.next = next;
     }
 
-    public double getData() {
+    public int getData() {
         return data;
     }
 
@@ -22,4 +22,7 @@ public class Node {
         return next;
     }
 
+    public void setNext(Node next) {
+        this.next = next;
+    }
 }
