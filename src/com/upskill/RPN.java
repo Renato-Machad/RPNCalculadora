@@ -89,5 +89,11 @@ public class RPN {
     }
 
 
+    public static void multiply() {
+        int a = stack.pull();
+        int b = stack.pull();
+        int result = a + b;
+        stack.push(result);
+    }
 
 }
