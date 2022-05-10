@@ -28,4 +28,8 @@ public class Stack {
         size--;
         return data;
     }
+
+    public boolean isEmpty() {
+        return true;
+    }
 }
