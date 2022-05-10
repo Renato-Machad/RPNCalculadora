@@ -2,8 +2,15 @@ package com.upskill;
 
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Scanner;
 
 public class RPN {
+    private static Stack stack;
+
+    public RPN()
+    {
+        stack = new Stack();
+    }
 
     public static int evaluate(String expr) {
         int start = 0;
@@ -42,8 +49,6 @@ public class RPN {
 
         return result;
     }
-
-
 
 
     public static int operation(char operand, int a, int b) {

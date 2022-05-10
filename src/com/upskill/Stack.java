@@ -22,6 +22,11 @@ public class Stack {
         size++;
     }
 
+//    public void push (Node novo){
+//        novo.setNext(top);
+//        top = novo;
+//    }
+
     public int pull() {
         final int data = top.getData();
         top = top.getNext();

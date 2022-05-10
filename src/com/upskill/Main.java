@@ -13,13 +13,12 @@ public class Main {
 
         Scanner read = new Scanner(System.in);
 
-        while(expression != "Exit") {
+        while (expression != "Exit") {
             System.out.println("Type the expression:");
             expression = read.nextLine();
-            try{
+            try {
                 System.out.println(RPN.evaluate(expression));
-            } catch(Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("Invalid Expression. Try again or type 'Exit' to quit.");
             }
         }
