@@ -15,9 +15,9 @@ public class RPN {
         {
             int space = expr.substring(start).indexOf(' ');
             int end = space == -1 ? expr.length() : start + space;
-            String current = expr.substring(start,end);//current number or operator
-            if("+-*/".indexOf(current.charAt(0)) != -1)//check if current is operator
-            {//pop 2 and apply operation
+            String current = expr.substring(start,end);
+            if("+-*/".indexOf(current.charAt(0)) != -1)
+            {
                 int a = stack.pull();
                 int b = stack.pull();
                 stack.push(operation(current.charAt(0),b,a));
@@ -26,11 +26,11 @@ public class RPN {
             {
                 stack.push(Integer.parseInt(current));
             }
-            start = end + 1;//start over at index after the space
+            start = end + 1;
         }while(start < expr.length());
         double result = stack.pull();
 
-        while(!stack.isEmpty())//stack non-empty -> return greatest val
+        while(!stack.isEmpty())
         {
             double current = stack.pull();
             result = current > result ? current : result;
