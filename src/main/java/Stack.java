@@ -1,5 +1,3 @@
-package com.upskill;
-
 public class Stack {
 
     private static Node top;

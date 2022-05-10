@@ -1,5 +1,3 @@
-package com.upskill;
-
 public class Node {
 
     private int data;

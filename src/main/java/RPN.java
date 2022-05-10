@@ -1,5 +1,3 @@
-package com.upskill;
-
 public class RPN {
     private static Stack stack;
 
