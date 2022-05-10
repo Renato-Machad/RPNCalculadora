@@ -2,14 +2,14 @@ package com.upskill;
 
 public class Node {
 
-    private double data;
+    private int data;
     private Node next;
 
-    public Node(double data) {
+    public Node(int data) {
         this.data = data;
     }
 
-    public Node(double data, Node next) {
+    public Node(int data, Node next) {
         this.data = data;
         this.next = next;
     }
