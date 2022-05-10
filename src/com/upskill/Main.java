@@ -12,5 +12,6 @@ public class Main {
 
         Scanner read = new Scanner(System.in);
         expression = read.nextLine();
+        System.out.println(RPN.evaluate(expression));
     }
 }

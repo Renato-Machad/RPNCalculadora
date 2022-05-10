@@ -13,9 +13,12 @@ public class RPN {
 
         do
         {
+
             int space = expr.substring(start).indexOf(' ');
             int end = space == -1 ? expr.length() : start + space;
+
             String current = expr.substring(start,end);
+
             if("+-*/".indexOf(current.charAt(0)) != -1)
             {
                 int a = stack.pull();
@@ -28,6 +31,7 @@ public class RPN {
             }
             start = end + 1;
         }while(start < expr.length());
+
         int result = stack.pull();
 
         while(!stack.isEmpty())
@@ -38,6 +42,8 @@ public class RPN {
 
         return result;
     }
+
+
 
 
     public static int operation(char operand, int a, int b) {
