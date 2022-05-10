@@ -16,8 +16,8 @@ public class Stack {
             top = new Node(data);
         else
         {
-            Node numb = new Node(data,top);
-            top = numb;
+            Node current = new Node(data,top);
+            top = current;
         }
         size++;
     }
