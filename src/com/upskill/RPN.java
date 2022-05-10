@@ -5,7 +5,7 @@ import java.util.Hashtable;
 
 public class RPN {
 
-    public static double evaluate(String expr) {
+    public static int evaluate(String expr) {
         int start = 0;
         Stack stack = new Stack();
 
@@ -28,11 +28,11 @@ public class RPN {
             }
             start = end + 1;
         }while(start < expr.length());
-        double result = stack.pull();
+        int result = stack.pull();
 
         while(!stack.isEmpty())
         {
-            double current = stack.pull();
+            int current = stack.pull();
             result = current > result ? current : result;
         }
 
