@@ -1,6 +1,8 @@
+import Converters.Binary;
+
 import java.util.Scanner;
 
-public class RPNCalculator {
+public class RPNCalculator implements Binary {
 
     public static void main(String[] args) {
         Stack stack = new Stack();
