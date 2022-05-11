@@ -30,4 +30,22 @@ public class RPN {
         stack.push(lastInput);
     }
 
+    public String listNumberNodes(int number) {
+        StringBuilder result = new StringBuilder();
+        Node aux = stack.getTop();
+        if (aux.getNext() != null) {
+            if (stack.getSize() >= number) {
+                for (int i = 0; i < number; i++) {
+                    result.append(aux.getData());
+                    if (aux.getNext() != null) {
+                        result.append("\n");
+                    }
+                    aux = aux.getNext();
+                }
+                return "List:\n" + result;
+            }
+            return "The list is smaller than that number";
+        } else
+            return "The list is empty";
+    }
 }
