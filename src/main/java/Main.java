@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Stack stack = new Stack();
         String value = "";
+        RPN rpn = new RPN();
 
         System.out.println("---RPN Calculator---\n");
         System.out.println("Type a value:");
@@ -35,7 +36,7 @@ public class Main {
 
         //US14 Como utilizador quero substituir o primeiro elemento da pilha pelo seu negativo
         if (option == 14) {
-            stack.convertIntoNegative(stack.getTop().getData());
+            rpn.convertIntoNegative2(stack.getTop().getData());
             System.out.println(stack);
         }
         if (option == 3) {

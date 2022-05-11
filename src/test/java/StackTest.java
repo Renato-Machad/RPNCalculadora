@@ -1,9 +1,11 @@
 
+import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 public class StackTest {
 
-    @org.junit.Test
+    @Test
     public void listagemVazia() {
         //arrange
         //int data = 3;
@@ -16,4 +18,21 @@ public class StackTest {
         //assert
         assertEquals(resultado, "A lista está vazia");
     }
+
+//    @Test
+//    public void addValueToTopEmptyStack(){
+//        //arrange
+//        int num = 1;
+//        Node node = new Node(num);
+//        Stack stack = new Stack(node);
+//
+//        //Act
+//        Stack stackResult = new Stack();
+//        stackResult.push(num);
+//
+//        //assert
+//        assertEquals(stack,stackResult);
+//
+//    }
+
 }

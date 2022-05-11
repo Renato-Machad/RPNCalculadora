@@ -7,6 +7,10 @@ public class Stack {
         size = 0;
     }
 
+    public Stack(Node num){
+        this.top=num;
+    }
+
     public int getSize() {
         return size;
     }
@@ -35,13 +39,6 @@ public class Stack {
         top = top.getNext();
         size--;
         return data;
-    }
-
-    public void convertIntoNegative(int lastInput) {
-        pull();
-        int negative = lastInput * (-1);
-        lastInput = negative;
-        push(lastInput);
     }
 
     public boolean isEmpty() {
