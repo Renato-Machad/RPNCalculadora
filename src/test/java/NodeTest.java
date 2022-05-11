@@ -1,4 +1,4 @@
-import org.junit.Assert;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -20,10 +20,18 @@ public class NodeTest {
         assertEquals(expectedResult,actualResult);
     }
 
-    public void listStackUncess(){
+    @Test
+    public void listStackFail(){
+
         //Arrange
+        Stack stack = new Stack();
         String expectedResult = "null";
 
+        //Act
+        String actualResult = stack.toString();
+
+        //Assert
+        assertEquals(expectedResult,actualResult);
     }
 
 }
