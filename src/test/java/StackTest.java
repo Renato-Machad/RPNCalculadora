@@ -17,7 +17,7 @@ public class StackTest {
         stackResult.push(stack.getTop().getData());
 
         //Assert
-        assertEquals(node.getData(), stackResult.getTop().getData());
+        assertEquals(stack.getTop().getData(), stackResult.getTop().getData());
     }
 
     @Test
