@@ -14,9 +14,9 @@ public class Stack {
     public int getSize() {
         return size;
     }
-
+//Este método deve devolver uma cópia do top para o proteger e nao ser alterado/apagado
     public Node getTop() {
-        return top;
+        return new Node(top.getData());
     }
 
     public void push(int data) {
