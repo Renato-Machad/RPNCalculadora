@@ -9,18 +9,58 @@ public class RPN {
         return stack;
     }
 
-    public void sum() {
-        int a = stack.pull();
-        int b = stack.pull();
-        int result = a + b;
-        stack.push(result);
+    public boolean sum() {
+        if(stack.getSize() < 2) {
+            return false;
+        } else {
+            int a = stack.pull();
+            int b = stack.pull();
+            int result = a + b;
+            stack.push(result);
+            return true;
+        }
     }
 
-    public void multiply() {
-        int a = stack.pull();
-        int b = stack.pull();
-        int result = a * b;
-        stack.push(result);
+    public boolean multiply() {
+        if (stack.getSize() >= 2) {
+            int a = stack.pull();
+            int b = stack.pull();
+            int result = a * b;
+            stack.push(result);
+        } else {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean divide() {
+        if (stack.getSize() < 2) {
+            return false;
+        } else {
+            int a = stack.pull();
+            int b = stack.pull();
+            if (a != 0) {
+                int result = b / a;
+                stack.push(result);
+                return true;
+            } else {
+                stack.push(b);
+                stack.push(a);
+                return false;
+            }
+        }
+    }
+
+    public boolean minus() {
+        if (stack.getSize() < 2) {
+            return false;
+        } else {
+            int a = stack.pull();
+            int b = stack.pull();
+            int result = b - a;
+            stack.push(result);
+        }
+        return true;
     }
 
     public void convertIntoNegative(int lastInput) {

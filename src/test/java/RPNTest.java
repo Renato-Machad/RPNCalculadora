@@ -17,10 +17,9 @@ public class RPNTest {
 
         //Act
         rpn.sum();
-        Node node = stack.getTop();
 
         //Assert
-        assertEquals(expectedResult,node.getData());
+        assertEquals(expectedResult,stack.pull());
     }
 
     @Test
@@ -34,10 +33,41 @@ public class RPNTest {
 
         //Act
         rpn.multiply();
-        Node node = stack.getTop();
 
         //Assert
-        assertEquals(expectedResult,node.getData());
+        assertEquals(expectedResult,stack.pull());
+    }
+
+    @org.junit.Test
+    public void divideTestSuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        stack.push(4);
+        stack.push(2);
+        int expectedResult = 2;
+
+        //Act
+        rpn.divide();
+
+        //Assert
+        assertEquals(expectedResult,stack.pull());
+    }
+
+    @org.junit.Test
+    public void minusTestSuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        stack.push(2);
+        stack.push(2);
+        int expectedResult = 0;
+
+        //Act
+        rpn.minus();
+
+        //Assert
+        assertEquals(expectedResult,stack.pull());
     }
 
     @Test
