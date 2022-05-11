@@ -11,30 +11,48 @@ public class RPNTest {
         Stack stack = rpn.getStack();
         stack.push(2);
         stack.push(2);
-        int resultadoEsperado = 4;
+        int expectedResult = 4;
 
         //Act
         rpn.sum();
         Node node = stack.getTop();
 
         //Assert
-        assertEquals(resultadoEsperado,node.getData());
+        assertEquals(expectedResult,node.getData());
     }
 
     @org.junit.Test
-    public void multiply() {
+    public void multiplyTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
         stack.push(2);
         stack.push(3);
-        int resultadoEsperado = 6;
+        int expectedResult = 6;
 
         //Act
         rpn.multiply();
         Node node = stack.getTop();
 
         //Assert
-        assertEquals(resultadoEsperado,node.getData());
+        assertEquals(expectedResult,node.getData());
+    }
+
+    @org.junit.Test
+    public void convertIntoNegativeTestSuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        stack.push(2);
+        int expectedResult = -2;
+
+        //Act
+        rpn.convertIntoNegative((stack.getTop()).getData());
+        Node node = stack.getTop();
+
+        //Assert
+        assertEquals(expectedResult,node.getData());
+
+
     }
 }
