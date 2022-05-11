@@ -33,6 +33,26 @@ public class RPN {
         return true;
     }
 
+    public boolean divide() {
+        if (stack.getSize() < 2) {
+            return false;
+        } else {
+            int a = stack.pull();
+            int b = stack.pull();
+            if (a != 0) {
+                int result = b / a;
+                stack.push(result);
+                return true;
+            } else {
+                stack.push(b);
+                stack.push(a);
+                return false;
+            }
+
+
+        }
+    }
+
     public void convertIntoNegative(int lastInput) {
         stack.pull();
         int negative = lastInput * (-1);
