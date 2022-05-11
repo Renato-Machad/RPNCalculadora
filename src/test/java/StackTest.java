@@ -19,4 +19,65 @@ public class StackTest {
         //assert
         assertEquals(node.getData(), stackResult.getTop().getData());
     }
+
+    @Test
+    public void addValueToTopStackAndCompare2EqualsStacks() {
+        //arrange
+        Stack stack = new Stack(new Node(1));
+        int num = 1;
+        Node node = new Node(num);
+
+        //Act
+        Stack stack2 = new Stack();
+        stack2.push(node.getData());
+
+        //assert
+        assertEquals(stack.toString(), stack2.toString());
+    }
+
+
+    @Test
+    public void pullValueFromStackWithValues(){
+        //Arrange
+        int num =1;
+        int num2 =2;
+        Stack stack = new Stack();
+        stack.push(num);
+        stack.push(num2);
+
+        //Act
+        int result = stack.pull();
+
+        //Assert
+        assertEquals(2,result);
+    }
+
+    @Test
+    public void pullValueFromStackWithOneValue(){
+        //Arrange
+        int num =1;
+        Stack stack = new Stack();
+        stack.push(num);
+
+        //Act
+        stack.pull();
+
+        //Assert
+        assertTrue(stack.isEmpty());
+    }
+
+
+
+//    @Test
+//    public void pullValueFromStackWithNoValue(){
+//        //Arrange
+//        Stack stack = new Stack();
+//
+//        //Act
+//        stack.pull();
+//
+//        //Assert
+//        assertNull(stack.getTop().getData());
+//    }
+
 }
