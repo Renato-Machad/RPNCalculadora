@@ -59,8 +59,12 @@ public class RPNCalculator {
                 "1 - Add an element to the stack \n" +
                 "2 - Remove the first element from the stack \n" +
                 "3 - List the content of the stack \n" +
+                "4 - List the the first N elements of the stack \n" +
+                "5 - Duplicate the first element of the stack \n" +
                 "10 - Replace the first two elements of the stack by their sum \n" +
                 "11 - Replace the first two elements of the stack by their multiplication \n" +
+                "12 - Replace the first two elements of the stack by dividing the second element by the first \n" +
+                "13 - Replace the first two elements of the stack by subtracting the second by the first \n" +
                 "14 - Replace the first element of the stack by its negative \n" +
                 "99 - Quit");
         return option = read.nextInt();
