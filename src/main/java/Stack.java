@@ -56,13 +56,12 @@ public class Stack {
         StringBuilder result = new StringBuilder();
         Node aux = top;
         if (aux.getNext() != null) {
-            Node current = aux;
-            while (current.getNext() != null) {
-                result.append(current.getData());
-                if (current.getNext() != null) {
+            while (aux.getNext() != null) {
+                result.append(aux.getData());
+                if (aux.getNext() != null) {
                     result.append("\n");
                 }
-                current = current.getNext();
+                aux = aux.getNext();
             }
             return "List:\n" + result;
         } else
