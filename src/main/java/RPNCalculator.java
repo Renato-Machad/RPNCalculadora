@@ -63,6 +63,12 @@ public class RPNCalculator implements Binary {
                     System.out.println((stack.getTop()).getData());
                     break;
 
+                case 40:
+                    value = read.nextLine();
+                    String binary = rpn.decimalToBinaryConverter(Integer.parseInt(value));
+                    System.out.println(binary);
+                    break;
+
                 default:
                     System.out.println("Invalid expression.");
                     break;
@@ -84,6 +90,7 @@ public class RPNCalculator implements Binary {
                 "12 - Replace the first two elements of the stack by dividing the second with the first \n" +
                 "13 - Replace the first two elements of the stack by subtracting the second with the first \n" +
                 "14 - Replace the first element of the stack by its negative \n" +
+                "40 - Decimal to binary converter \n" +
                 "99 - Quit");
         return option = read.nextInt();
     }

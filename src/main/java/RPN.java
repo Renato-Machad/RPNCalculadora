@@ -92,4 +92,10 @@ public class RPN {
         } else
             return "The list is empty";
     }
+
+    public String decimalToBinaryConverter(int decimal) {
+        String binary = Integer.toBinaryString(decimal);
+        stack.push(Integer.parseInt(binary));
+        return binary;
+    }
 }
