@@ -4,6 +4,7 @@ public class Stack {
     private int size;
 
     public Stack() {
+        top = new Node();
         size = 0;
     }
 
@@ -14,9 +15,9 @@ public class Stack {
     public int getSize() {
         return size;
     }
-
+//Este método deve devolver uma cópia do top para o proteger e nao ser alterado/apagado
     public Node getTop() {
-        return top;
+        return new Node(top.getData());
     }
 
     public void push(int data) {
@@ -49,5 +50,22 @@ public class Stack {
     @Override
     public String toString() {
         return top.toString();
+    }
+
+
+    public static String listNodes() {
+        StringBuilder result = new StringBuilder();
+        Node aux = top;
+        if (aux.getNext() != null) {
+            while (aux.getNext() != null) {
+                result.append(aux.getData());
+                if (aux.getNext() != null) {
+                    result.append("\n");
+                }
+                aux = aux.getNext();
+            }
+            return "List:\n" + result;
+        } else
+            return "The list is empty";
     }
 }
