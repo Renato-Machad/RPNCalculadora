@@ -22,4 +22,12 @@ public class RPN {
         int result = a * b;
         stack.push(result);
     }
+
+    public void convertIntoNegative2(int lastInput) {
+        stack.pull();
+        int negative = lastInput * (-1);
+        lastInput = negative;
+        stack.push(lastInput);
+    }
+
 }
