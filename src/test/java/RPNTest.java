@@ -23,6 +23,18 @@ public class RPNTest {
 
     @org.junit.Test
     public void multiply() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        stack.push(2);
+        stack.push(3);
+        int resultadoEsperado = 6;
 
+        //Act
+        rpn.multiply();
+        Node node = stack.getTop();
+
+        //Assert
+        assertEquals(resultadoEsperado,node.getData());
     }
 }
