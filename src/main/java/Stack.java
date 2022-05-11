@@ -4,6 +4,7 @@ public class Stack {
     private int size;
 
     public Stack() {
+        top = new Node();
         size = 0;
     }
 
