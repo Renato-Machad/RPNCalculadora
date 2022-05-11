@@ -10,7 +10,7 @@ public class RPN {
     }
 
     public boolean sum() {
-        if(stack.getSize() < 2) {
+        if (stack.getSize() < 2) {
             return false;
         } else {
             int a = stack.pull();
@@ -93,9 +93,22 @@ public class RPN {
             return "The list is empty";
     }
 
+
     public String decimalToBinaryConverter(int decimal) {
         String binary = Integer.toBinaryString(decimal);
         stack.push(Integer.parseInt(binary));
         return binary;
+    }
+
+
+    public boolean duplicateFirstStackElement() {
+        if (stack.getSize() > 1) {
+            int a = stack.pull();
+            stack.push(a);
+            stack.push(a);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
