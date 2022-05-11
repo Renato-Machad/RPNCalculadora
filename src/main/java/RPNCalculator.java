@@ -29,7 +29,7 @@ public class RPNCalculator implements Binary {
                     break;
 
                 case 3:
-                    System.out.println(rpn.listNumberNodes(3));
+                    System.out.println(stack.listNodes());
                     break;
 
                 case 4:
