@@ -5,6 +5,10 @@ public class RPN {
         stack = new Stack();
     }
 
+    public Stack getStack() {
+        return stack;
+    }
+
     public void sum() {
         int a = stack.pull();
         int b = stack.pull();
