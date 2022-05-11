@@ -38,6 +38,11 @@ public class RPNCalculator implements Binary {
                     System.out.println(rpn.listNumberNodes(numberOfElementsToList));
                     break;
 
+                case 5:
+                    rpn.duplicateFirstStackElement();
+                    System.out.println((stack.getTop()).getData());
+                    break;
+
                 case 10:
                     rpn.sum();
                     System.out.println((stack.getTop()).getData());

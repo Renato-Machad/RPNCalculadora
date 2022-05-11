@@ -92,4 +92,15 @@ public class RPN {
         } else
             return "The list is empty";
     }
+
+    public boolean duplicateFirstStackElement() {
+        if (stack.getSize() > 1) {
+            int a = stack.pull();
+            stack.push(a);
+            stack.push(a);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
