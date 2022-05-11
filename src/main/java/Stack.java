@@ -45,23 +45,6 @@ public class Stack {
         return true;
     }
 
-    // este metodo apaga os registos anteriores ao percorre-los
-    public static String listNodes() {
-        StringBuilder result = new StringBuilder();
-        if (top != null) {
-            Node current = top;
-            while (current.getNext() != null) {
-                result.append(current.getData());
-                if (current.getNext() != null) {
-                    result.append(", ");
-                }
-                current = current.getNext();
-            }
-            return "List: " + result;
-        } else
-            return "A lista está vazia";
-    }
-
     @Override
     public String toString() {
         return top.toString();
