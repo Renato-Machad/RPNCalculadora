@@ -23,7 +23,7 @@ public class RPN {
         stack.push(result);
     }
 
-    public void convertIntoNegative2(int lastInput) {
+    public void convertIntoNegative(int lastInput) {
         stack.pull();
         int negative = lastInput * (-1);
         lastInput = negative;

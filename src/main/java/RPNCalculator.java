@@ -41,7 +41,7 @@ public class RPNCalculator {
                     break;
 
                 case 14:
-                    rpn.convertIntoNegative2((stack.getTop()).getData());
+                    rpn.convertIntoNegative((stack.getTop()).getData());
                     System.out.println((stack.getTop()).getData());
                     break;
 
