@@ -53,7 +53,7 @@ public class Stack {
     }
 
 
-    public static String listNodes() {
+    public String listNodes() {
         StringBuilder result = new StringBuilder();
         Node aux = top;
         if (aux.getNext() != null) {

@@ -72,4 +72,57 @@ public class RPNTest {
         assertEquals(expectedResult,node.getData());
     }
 
+    //US04
+    @Test
+    public void listNumberStackSuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        stack.push(7);
+        stack.push(3);
+        stack.push(2);
+        stack.push(4);
+        int numberOfElementsToList = 3;
+        String expectedResult = "List:\n4\n2\n3\n";
+
+        //Act
+        String actualResult = rpn.listNumberNodes(numberOfElementsToList);
+
+        //Assert
+        assertEquals(expectedResult,actualResult);
+    }
+
+    //US04
+    @Test
+    public void listNumberStackTooShortFail() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        stack.push(7);
+        stack.push(3);
+        int numberOfElementsToList = 3;
+        String expectedResult = "The list is smaller than that number";
+
+        //Act
+        String actualResult = rpn.listNumberNodes(numberOfElementsToList);
+
+        //Assert
+        assertEquals(expectedResult,actualResult);
+    }
+
+    //US04
+    @Test
+    public void listNumberStackEmptyFail() {
+        //Arrange
+        RPN rpn = new RPN();
+        int numberOfElementsToList = 3;
+        String expectedResult = "The list is empty";
+
+        //Act
+        String actualResult = rpn.listNumberNodes(numberOfElementsToList);
+
+        //Assert
+        assertEquals(expectedResult,actualResult);
+    }
+
 }
