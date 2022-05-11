@@ -45,6 +45,11 @@ public class RPNCalculator {
                     System.out.println((stack.getTop()).getData());
                     break;
 
+                case 13:
+                    rpn.minus();
+                    System.out.println((stack.getTop()).getData());
+                    break;
+
                 case 14:
                     rpn.convertIntoNegative((stack.getTop()).getData());
                     System.out.println((stack.getTop()).getData());
@@ -67,6 +72,7 @@ public class RPNCalculator {
                 "10 - Replace the first two elements of the stack by their sum \n" +
                 "11 - Replace the first two elements of the stack by their multiplication \n" +
                 "12 - Replace the first two elements of the stack by dividing the second with the first" +
+                "13 - Replace the first two elements of the stack by subtracting the second with the first" +
                 "14 - Replace the first element of the stack by its negative \n" +
                 "99 - Quit");
         return option = read.nextInt();

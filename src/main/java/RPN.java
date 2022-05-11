@@ -48,9 +48,19 @@ public class RPN {
                 stack.push(a);
                 return false;
             }
-
-
         }
+    }
+
+    public boolean minus() {
+        if (stack.getSize() < 2) {
+            return false;
+        } else {
+            int a = stack.pull();
+            int b = stack.pull();
+            int result = b - a;
+            stack.push(result);
+        }
+        return true;
     }
 
     public void convertIntoNegative(int lastInput) {

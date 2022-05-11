@@ -53,6 +53,22 @@ public class RPNTest {
     }
 
     @org.junit.Test
+    public void minusTestSuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        stack.push(2);
+        stack.push(2);
+        int expectedResult = 0;
+
+        //Act
+        rpn.minus();
+
+        //Assert
+        assertEquals(expectedResult,stack.pull());
+    }
+
+    @org.junit.Test
     public void convertIntoNegativeTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
