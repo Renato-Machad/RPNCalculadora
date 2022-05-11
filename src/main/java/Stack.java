@@ -36,7 +36,7 @@ public class Stack {
 //    }
 
     public int pull() {
-        if (size == 0) ;
+        //if (size == 0);
         final int data = top.getData();
         top = top.getNext();
         size--;

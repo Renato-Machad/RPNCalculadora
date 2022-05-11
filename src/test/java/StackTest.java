@@ -20,17 +20,8 @@ public class StackTest {
         assertEquals(node.getData(), stackResult.getTop().getData());
     }
 
-
-    /*@Test
-    public int pullValueFromStackWithOneElement(){
-        //Arrange
-
-
-    }
-*/
-
     @Test
-    public void addValueToTopStackAndCompare2EqualsStacks() {
+    public void addValueToTopStackAndCompare2EqualStacks() {
         //arrange
         Stack stack = new Stack(new Node(1));
         int num = 1;
@@ -78,7 +69,7 @@ public class StackTest {
 
 
 //    @Test
-//    public void pullValueFromStackWithNoValue(){
+//    public void pullValueFromStackWithNoValues(){
 //        //Arrange
 //        Stack stack = new Stack();
 //
