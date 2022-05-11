@@ -21,11 +21,16 @@ public class RPN {
         }
     }
 
-    public void multiply() {
-        int a = stack.pull();
-        int b = stack.pull();
-        int result = a * b;
-        stack.push(result);
+    public boolean multiply() {
+        if (stack.getSize() >= 2) {
+            int a = stack.pull();
+            int b = stack.pull();
+            int result = a * b;
+            stack.push(result);
+        } else {
+            return false;
+        }
+        return true;
     }
 
     public void convertIntoNegative(int lastInput) {
