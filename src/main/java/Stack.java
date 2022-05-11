@@ -1,7 +1,7 @@
 public class Stack {
 
     private static Node top;
-    private int size;
+    private static int size;
 
     public Stack() {
         top = new Node();
@@ -17,7 +17,7 @@ public class Stack {
     }
 //Este método deve devolver uma cópia do top para o proteger e nao ser alterado/apagado
     public Node getTop() {
-        return new Node(top.getData());
+        return new Node(top.getData(), top.getNext());
     }
 
     public void push(int data) {
