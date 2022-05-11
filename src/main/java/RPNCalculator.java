@@ -3,27 +3,32 @@ import java.util.Scanner;
 public class RPNCalculator {
 
     public static void main(String[] args) {
-        int value = 0;
+        Stack stack = new Stack();
+        String value = null;
 
         System.out.println("---RPN Calculator---\n");
         System.out.println("Type the expression:");
 
         Scanner read = new Scanner(System.in);
 
-        while (value != 4) {
-            value = read.nextInt();
-            System.out.println(RPN.evaluate(String.valueOf(value)));
-            try {
-                System.out.println(RPN.evaluate(String.valueOf(value)));
-            } catch (Exception e) {
-                System.out.println("Invalid expression. Try again or type 4 to quit.");
-            }
-        }
+        do {
+            value = read.nextLine();
 
-        /*do {
-            switch (value = RPNCalculator.reader()) {
+            stack.push(Integer.parseInt(value));
+
+            System.out.println("Do you want to add another value? (Yes-y/No-n?");
+            value = read.nextLine();
+        } while (value.equalsIgnoreCase("y"));
+
+        System.out.println(stack);
+        System.out.println(stack);
+
+        int option = 0;
+
+        do {
+            switch (option = RPNCalculator.reader()) {
                 case 1:
-                    //double result =
+
                     break;
 
                 case 2:
@@ -42,9 +47,7 @@ public class RPNCalculator {
                     System.out.println("Invalid expression.");
                     break;
             }
-        } while (value != 4);
-
-         */
+        } while (value != "99");
     }
 
     public static int reader() {
@@ -54,10 +57,10 @@ public class RPNCalculator {
                 "1 - Add an element to the stack \n" +
                 "2 - Remove the first element from the stack \n" +
                 "3 - List the content of the stack \n" +
-                "4 - Replace the first two elements of the stack by their sum \n" +
-                "5 - Replace the first two elements of the stack by their multiplication \n" +
-                "6 - Replace the first element of the stack by its negative \n" +
-                "4 - Quit");
+                "10 - Replace the first two elements of the stack by their sum \n" +
+                "11 - Replace the first two elements of the stack by their multiplication \n" +
+                "14 - Replace the first element of the stack by its negative \n" +
+                "99 - Quit");
         return option = read.nextInt();
     }
 }
