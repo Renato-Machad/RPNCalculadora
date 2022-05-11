@@ -30,6 +30,12 @@ public class RPNCalculator {
                     System.out.println(stack.listNodes());
                     break;
 
+                case 4:
+                    System.out.println("How many stack elements would you like to list:");
+                    int numberOfElementsToList = read.nextInt();
+                    System.out.println(rpn.listNumberNodes(numberOfElementsToList));
+                    break;
+
                 case 10:
                     rpn.sum();
                     System.out.println((stack.getTop()).getData());
