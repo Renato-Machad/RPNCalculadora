@@ -7,8 +7,8 @@ public class Stack {
         size = 0;
     }
 
-    public Stack(Node num){
-        this.top=num;
+    public Stack(Node num) {
+        this.top = num;
     }
 
     public int getSize() {
@@ -35,6 +35,7 @@ public class Stack {
 //    }
 
     public int pull() {
+        if (size == 0) ;
         final int data = top.getData();
         top = top.getNext();
         size--;

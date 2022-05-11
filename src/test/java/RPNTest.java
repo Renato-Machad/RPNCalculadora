@@ -1,10 +1,12 @@
 import static org.junit.Assert.*;
 
+import org.junit.Test;
+
 public class RPNTest {
 
 
 
-    @org.junit.Test
+    @Test
     public void sumTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -21,7 +23,7 @@ public class RPNTest {
         assertEquals(expectedResult,node.getData());
     }
 
-    @org.junit.Test
+    @Test
     public void multiplyTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -38,7 +40,7 @@ public class RPNTest {
         assertEquals(expectedResult,node.getData());
     }
 
-    @org.junit.Test
+    @Test
     public void convertIntoNegativeTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -52,7 +54,22 @@ public class RPNTest {
 
         //Assert
         assertEquals(expectedResult,node.getData());
-
-
     }
+
+    @Test
+    public void convertIntoNegativeTestUnsuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+
+        int expectedResult = 2;
+
+        //Act
+        rpn.convertIntoNegative((stack.getTop()).getData());
+        Node node = stack.getTop();
+
+        //Assert
+        assertEquals(expectedResult,node.getData());
+    }
+
 }

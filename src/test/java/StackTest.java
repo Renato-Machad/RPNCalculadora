@@ -7,7 +7,7 @@ public class StackTest {
 
     @Test
     public void addValueToTopEmptyStack() {
-        //arrange
+        //Arrange
         int num = 1;
         Node node = new Node(num);
         Stack stack = new Stack(node);
@@ -16,7 +16,16 @@ public class StackTest {
         Stack stackResult = new Stack();
         stackResult.push(stack.getTop().getData());
 
-        //assert
+        //Assert
         assertEquals(node.getData(), stackResult.getTop().getData());
     }
+
+    /*@Test
+    public int pullValueFromStackWithOneElement(){
+        //Arrange
+
+
+    }
+*/
+
 }

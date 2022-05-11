@@ -24,10 +24,14 @@ public class RPN {
     }
 
     public void convertIntoNegative(int lastInput) {
-        stack.pull();
-        int negative = lastInput * (-1);
-        lastInput = negative;
-        stack.push(lastInput);
+        int a = stack.pull();
+        int value;
+        if (a <= 0) {
+            value = a;
+        } else {
+            value = a * (-1);
+        }
+        stack.push(value);
     }
 
 }
