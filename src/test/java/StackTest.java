@@ -1,12 +1,12 @@
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class StackTest {
 
     @Test
-    public void addValueToTopEmptyStack(){
+    public void addValueToTopEmptyStack() {
         //arrange
         int num = 1;
         Node node = new Node(num);
@@ -17,7 +17,6 @@ public class StackTest {
         stackResult.push(stack.getTop().getData());
 
         //assert
-        assertEquals(stack.getTop(),stackResult.getTop());
-
+        assertEquals(node.getData(), stackResult.getTop().getData());
     }
 }
