@@ -27,7 +27,7 @@ public class RPNCalculator {
                     break;
 
                 case 3:
-                    System.out.println(stack.toString());
+                    System.out.println(stack.listNodes());
                     break;
 
                 case 10:

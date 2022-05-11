@@ -11,10 +11,10 @@ public class NodeTest {
         Stack stack = rpn.getStack();
         stack.push(7);
         stack.push(3);
-        String expectedResult = "3  7  null";
+        String expectedResult = "List:\n3\n7\n";
 
         //Act
-        String actualResult = stack.toString();
+        String actualResult = stack.listNodes();
 
         //Assert
         assertEquals(expectedResult,actualResult);
@@ -25,10 +25,10 @@ public class NodeTest {
 
         //Arrange
         Stack stack = new Stack();
-        String expectedResult = "null";
+        String expectedResult = "The list is empty";
 
         //Act
-        String actualResult = stack.toString();
+        String actualResult = stack.listNodes();
 
         //Assert
         assertEquals(expectedResult,actualResult);

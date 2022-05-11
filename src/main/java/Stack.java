@@ -50,4 +50,22 @@ public class Stack {
     public String toString() {
         return top.toString();
     }
+
+
+    public static String listNodes() {
+        StringBuilder result = new StringBuilder();
+        Node aux = top;
+        if (aux.getNext() != null) {
+            Node current = aux;
+            while (current.getNext() != null) {
+                result.append(current.getData());
+                if (current.getNext() != null) {
+                    result.append("\n");
+                }
+                current = current.getNext();
+            }
+            return "List:\n" + result;
+        } else
+            return "The list is empty";
+    }
 }
