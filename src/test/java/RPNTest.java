@@ -15,10 +15,9 @@ public class RPNTest {
 
         //Act
         rpn.sum();
-        Node node = stack.getTop();
 
         //Assert
-        assertEquals(expectedResult,node.getData());
+        assertEquals(expectedResult,stack.pull());
     }
 
     @org.junit.Test

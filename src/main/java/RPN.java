@@ -9,11 +9,16 @@ public class RPN {
         return stack;
     }
 
-    public void sum() {
-        int a = stack.pull();
-        int b = stack.pull();
-        int result = a + b;
-        stack.push(result);
+    public boolean sum() {
+        if(stack.getSize() < 2) {
+            return false;
+        } else {
+            int a = stack.pull();
+            int b = stack.pull();
+            int result = a + b;
+            stack.push(result);
+            return true;
+        }
     }
 
     public void multiply() {
