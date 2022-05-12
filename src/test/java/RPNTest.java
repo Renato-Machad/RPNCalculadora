@@ -33,12 +33,13 @@ public class RPNTest {
         stack.push(decimalNumber);
         stack.push(decimalNumber2);
         int expectedResult = 6;
+        GeneralNumber decimalNumber3 = new DecimalNumber(expectedResult);
 
         //Act
         rpn.multiply();
 
         //Assert
-        assertEquals(expectedResult, stack.pull());
+        assertEquals(decimalNumber3.getValueDecimal(decimalNumber3), stack.pull().getValueDecimal(decimalNumber3));
     }
 
     @org.junit.Test
