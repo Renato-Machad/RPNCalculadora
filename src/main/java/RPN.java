@@ -75,48 +75,52 @@ public class RPN {
         return true;
     }
 
-    public void convertIntoNegative(GeneralNumber lastInput) {
-        GeneralNumber a = stack.pull();
-        int value;
-        int a2 = a.getValueDecimal(a);
-        if (a2 <= 0) {
-            value = a2;
-        } else {
-            value = a2 * (-1);
-        }
-        DecimalNumber result = new DecimalNumber(value);
-        stack.push(result);
-    }
-
-    public String listNumberNodes(int number) {
-        StringBuilder result = new StringBuilder();
-        Node aux = stack.getTop();
-        if (aux.getNext() != null) {
-            if (stack.getSize() >= number) {
-                for (int i = 0; i < number; i++) {
-                    result.append(aux.getData());
-                    if (aux.getNext() != null) {
-                        result.append("\n");
-                    }
-                    aux = aux.getNext();
-                }
-                return "List:\n" + result;
-            }
-            return "The list is smaller than that number";
-        } else
-            return "The list is empty";
-    }
-
-    public boolean duplicateFirstStackElement() {
-        if (stack.getSize() >= 1) {
-            GeneralNumber a = stack.pull();
-            int a2 = a.getValueDecimal(a);
-            DecimalNumber duplicateA = new DecimalNumber(a2);
-            stack.push(duplicateA);
-            stack.push(duplicateA);
-            return true;
-        } else {
+    public boolean convertIntoNegative(GeneralNumber lastInput) {
+        if (stack.getSize() < 1) {
             return false;
+        } else {
+            GeneralNumber a = stack.pull();
+            int value;
+            int a2 = a.getValueDecimal(a);
+            if (a2 <= 0) {
+                value = a2;
+            } else {
+                value = a2 * (-1);
+            }
+            DecimalNumber result = new DecimalNumber(value);
+            stack.push(result);
+        } return true;
+    }
+
+        public String listNumberNodes ( int number){
+            StringBuilder result = new StringBuilder();
+            Node aux = stack.getTop();
+            if (aux.getNext() != null) {
+                if (stack.getSize() >= number) {
+                    for (int i = 0; i < number; i++) {
+                        result.append(aux.getData());
+                        if (aux.getNext() != null) {
+                            result.append("\n");
+                        }
+                        aux = aux.getNext();
+                    }
+                    return "List:\n" + result;
+                }
+                return "The list is smaller than that number";
+            } else
+                return "The list is empty";
+        }
+
+        public boolean duplicateFirstStackElement () {
+            if (stack.getSize() >= 1) {
+                GeneralNumber a = stack.pull();
+                int a2 = a.getValueDecimal(a);
+                DecimalNumber duplicateA = new DecimalNumber(a2);
+                stack.push(duplicateA);
+                stack.push(duplicateA);
+                return true;
+            } else {
+                return false;
+            }
         }
     }
-}
