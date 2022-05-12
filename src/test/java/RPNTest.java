@@ -87,6 +87,7 @@ public class RPNTest {
         stack.push(decimalNumber2);
         int expectedResult = 0;
 
+
         //Act
         rpn.minus();
 
