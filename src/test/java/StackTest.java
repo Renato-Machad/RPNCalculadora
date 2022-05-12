@@ -8,8 +8,8 @@ public class StackTest {
     @Test
     public void addValueToTopEmptyStack() {
         //Arrange
-        int num = 1;
-        Node node = new Node(num);
+        GeneralNumber decimalNumber = new DecimalNumber(1);
+        Node node = new Node(decimalNumber);
         Stack stack = new Stack(node);
 
         //Act
@@ -22,10 +22,11 @@ public class StackTest {
 
     @Test
     public void addValueToTopStackAndCompare2EqualStacks() {
-        //arrange
-        Stack stack = new Stack(new Node(1));
-        int num = 1;
-        Node node = new Node(num);
+        //Arrange
+        DecimalNumber decimalNumber = new DecimalNumber(1);
+        Stack stack = new Stack(new Node(decimalNumber));
+        DecimalNumber decimalNumber2 = new DecimalNumber(1);
+        Node node = new Node(decimalNumber2);
 
         //Act
         Stack stack2 = new Stack();
@@ -35,29 +36,28 @@ public class StackTest {
         assertEquals(stack.toString(), stack2.toString());
     }
 
-
     @Test
-    public void pullValueFromStackWithValues(){
+    public void pullValueFromStackWithValues() {
         //Arrange
-        int num =1;
-        int num2 =2;
+        DecimalNumber decimalNumber1 = new DecimalNumber(1);
+        DecimalNumber decimalNumber2 = new DecimalNumber(2);
         Stack stack = new Stack();
-        stack.push(num);
-        stack.push(num2);
+        stack.push(decimalNumber1);
+        stack.push(decimalNumber2);
 
         //Act
-        int result = stack.pull();
+        GeneralNumber result = stack.pull();
 
         //Assert
-        assertEquals(2,result);
+        assertEquals(decimalNumber2, result);
     }
 
     @Test
-    public void pullValueFromStackWithOneValue(){
+    public void pullValueFromStackWithOneValue() {
         //Arrange
-        int num =1;
+        DecimalNumber decimalNumber = new DecimalNumber(1);
         Stack stack = new Stack();
-        stack.push(num);
+        stack.push(decimalNumber);
 
         //Act
         stack.pull();
@@ -66,10 +66,8 @@ public class StackTest {
         assertTrue(stack.isEmpty());
     }
 
-
-
     @Test
-    public void pullValueFromStackWithNoValues(){
+    public void pullValueFromStackWithNoValues() {
         //Arrange
         Stack stack = new Stack();
 
@@ -79,5 +77,4 @@ public class StackTest {
         //Assert
         assertNull(stack.getTop().getData());
     }
-
 }

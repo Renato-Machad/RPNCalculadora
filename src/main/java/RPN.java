@@ -79,8 +79,8 @@ public class RPN {
         GeneralNumber a = stack.pull();
         int value;
         int a2 = a.getValueDecimal(a);
-        if (a2 <=0) {
-           value = a2;
+        if (a2 <= 0) {
+            value = a2;
         } else {
             value = a2 * (-1);
         }

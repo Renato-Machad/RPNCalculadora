@@ -17,11 +17,11 @@ public class NodeTest {
         String actualResult = stack.listNodes();
 
         //Assert
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult, actualResult);
     }
 
     @Test
-    public void listStackFail(){
+    public void listStackFail() {
 
         //Arrange
         Stack stack = new Stack();
@@ -31,7 +31,6 @@ public class NodeTest {
         String actualResult = stack.listNodes();
 
         //Assert
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult, actualResult);
     }
-
 }

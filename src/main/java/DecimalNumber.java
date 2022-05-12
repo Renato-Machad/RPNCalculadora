@@ -1,9 +1,9 @@
-public class DecimalNumber extends GeneralNumber{
+public class DecimalNumber extends GeneralNumber {
 
     private int decimalNumber;
     private BinaryNumber binaryNumber;
 
-    public DecimalNumber(int decimalNumber){
+    public DecimalNumber(int decimalNumber) {
         this.decimalNumber = decimalNumber;
     }
 
@@ -15,7 +15,7 @@ public class DecimalNumber extends GeneralNumber{
 
     @Override
     public int StringToInteger(String value) {
-        int number = Integer.parseInt(String.valueOf(binaryNumber),2);
+        int number = Integer.parseInt(String.valueOf(binaryNumber), 2);
         return number;
     }
 
