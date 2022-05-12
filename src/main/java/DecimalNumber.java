@@ -38,8 +38,4 @@ public class DecimalNumber extends GeneralNumber {
         return decimalNumber == that.decimalNumber;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(decimalNumber);
-    }
 }

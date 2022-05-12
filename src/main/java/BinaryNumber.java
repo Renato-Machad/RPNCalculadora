@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class BinaryNumber extends GeneralNumber {
 
     private String binaryNumber;
@@ -30,4 +32,13 @@ public class BinaryNumber extends GeneralNumber {
                 "binaryNumber='" + binaryNumber + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BinaryNumber that = (BinaryNumber) o;
+        return Objects.equals(binaryNumber, that.binaryNumber);
+    }
+
 }

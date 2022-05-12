@@ -8,20 +8,27 @@ public class BinaryNumberTest {
     public void integerToString() {
         //Arrange
         int value = 5;
+        String valueString = String.valueOf(value); // "5"
         String valueEmBinário = "101";
 
         //Act
-        String binario = Integer.toBinaryString(value);
+        BinaryNumber binaryNumber = new BinaryNumber(valueString);
+        GeneralNumber binaryNumber1 = binaryNumber.integerToString(value);
+
 
         //Assert
-        assertEquals(binario, valueEmBinário);
-    }
-
-    @Test
-    public void stringToInteger() {
+        assertEquals(binaryNumber1, valueEmBinário);
     }
 
     @Test
     public void getValueDecimal() {
+        //Arrange
+        GeneralNumber decimal = new DecimalNumber(5);
+
+        //Act
+        decimal.getValueDecimal(decimal);
+
+        //Assert
+        assertEquals(decimal, decimal.getValueDecimal(decimal));
     }
 }
