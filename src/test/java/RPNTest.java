@@ -14,12 +14,13 @@ public class RPNTest {
         stack.push(decimalNumber);
         stack.push(decimalNumber2);
         int expectedResult = 4;
+        GeneralNumber decimalNumber3 = new DecimalNumber(expectedResult);
 
         //Act
         rpn.sum();
 
         //Assert
-        assertEquals(expectedResult, stack.pull());
+        assertEquals(decimalNumber3, stack.pull());
     }
 
     @Test
@@ -32,12 +33,13 @@ public class RPNTest {
         stack.push(decimalNumber);
         stack.push(decimalNumber2);
         int expectedResult = 6;
+        GeneralNumber decimalNumber3 = new DecimalNumber(expectedResult);
 
         //Act
         rpn.multiply();
 
         //Assert
-        assertEquals(expectedResult, stack.pull());
+        assertEquals(decimalNumber3, stack.pull());
     }
 
     @org.junit.Test
@@ -49,7 +51,7 @@ public class RPNTest {
         DecimalNumber b = new DecimalNumber(2);
         stack.push(a);
         stack.push(b);
-        int expectedResult = 2;
+        DecimalNumber expectedResult = new DecimalNumber(2);
 
         //Act
         rpn.divide();
@@ -108,7 +110,7 @@ public class RPNTest {
         //Assert
         assertEquals(expectedResult, node.getData());
     }
-
+    
     @Test
     public void convertIntoNegativeTestFail() {
         //Arrange
@@ -125,6 +127,22 @@ public class RPNTest {
         assertEquals(expectedResult, node.getData());
     }
 
+//    @Test
+//    public void convertIntoNegativeTestUnsuccess() { //O caso de insucesso é a stack estar vazia, tem de ser alterado!!!!
+//        //Arrange
+//        RPN rpn = new RPN();
+//        Stack stack = rpn.getStack();
+//
+//        //int expectedResult = 2;
+//
+//        //Act
+//        rpn.convertIntoNegative((stack.getTop()).getData());
+//
+//        //Assert
+//        assertNull(null, ));
+//    }
+
+
     //US04
     @Test
     public void listNumberStackSuccess() {
@@ -136,7 +154,7 @@ public class RPNTest {
         stack.push(new DecimalNumber(2));
         stack.push(new DecimalNumber(4));
         int numberOfElementsToList = 3;
-        String expectedResult = "List:\n4\n2\n3\n";
+        String expectedResult = "List:\nDecimalNumber:4\nDecimalNumber:2\nDecimalNumber:3\n";
 
         //Act
         String actualResult = rpn.listNumberNodes(numberOfElementsToList);
