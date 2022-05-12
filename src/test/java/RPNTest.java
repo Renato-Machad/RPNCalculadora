@@ -86,13 +86,14 @@ public class RPNTest {
         stack.push(decimalNumber);
         stack.push(decimalNumber2);
         int expectedResult = 0;
+        GeneralNumber decimalNumber1 = new DecimalNumber(expectedResult);
 
 
         //Act
         rpn.minus();
 
         //Assert
-        assertEquals(expectedResult, stack.pull());
+        assertEquals(decimalNumber1, stack.pull());
     }
 
     @Test
