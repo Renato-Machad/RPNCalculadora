@@ -26,8 +26,6 @@ public class BinaryNumber extends GeneralNumber {
 
     @Override
     public String toString() {
-        return "BinaryNumber{" +
-                "binaryNumber='" + binaryNumber + '\'' +
-                '}';
+        return "BinaryNumber:" + binaryNumber ;
     }
 }
