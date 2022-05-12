@@ -10,9 +10,11 @@ public class RPNTest {
     public void sumTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
+        GeneralNumber decimalNumber = new DecimalNumber(2);
+        GeneralNumber decimalNumber2 = new DecimalNumber(2);
         Stack stack = rpn.getStack();
-        stack.push(2);
-        stack.push(2);
+        stack.push(decimalNumber);
+        stack.push(decimalNumber2);
         int expectedResult = 4;
 
         //Act
