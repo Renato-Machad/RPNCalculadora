@@ -2,6 +2,9 @@ public class BinaryNumber extends GeneralNumber {
 
     private String binaryNumber;
 
+    public BinaryNumber(String value) {
+        this.binaryNumber = value;
+
     public BinaryNumber(String binaryNumber){
         this.binaryNumber = binaryNumber;
     }
@@ -23,11 +26,8 @@ public class BinaryNumber extends GeneralNumber {
         return value.StringToInteger(String.valueOf(value));
     }
 
-
     @Override
     public String toString() {
-        return "BinaryNumber{" +
-                "binaryNumber='" + binaryNumber + '\'' +
-                '}';
+        return "BinaryNumber:" + binaryNumber ;
     }
 }
