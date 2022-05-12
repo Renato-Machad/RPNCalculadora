@@ -2,13 +2,10 @@ public class BinaryNumber extends GeneralNumber {
 
     private String binaryNumber;
 
-    public BinaryNumber(String value) {
-        this.binaryNumber = value;
-
     public BinaryNumber(String binaryNumber){
         this.binaryNumber = binaryNumber;
     }
-//to fix branch
+
     @Override
     public GeneralNumber integerToString(int value) {
         String binaryString = Integer.toBinaryString(value);
@@ -26,8 +23,11 @@ public class BinaryNumber extends GeneralNumber {
         return value.StringToInteger(String.valueOf(value));
     }
 
+
     @Override
     public String toString() {
-        return "BinaryNumber:" + binaryNumber ;
+        return "BinaryNumber{" +
+                "binaryNumber='" + binaryNumber + '\'' +
+                '}';
     }
 }
