@@ -87,7 +87,8 @@ public class RPNCalculator {
                     System.out.println("Type the expression:");
                     value = read.nextInt();
                     DecimalNumber decimalNumber2 = new DecimalNumber(value);
-                    decimalNumber2.integerToString(value);
+                    GeneralNumber binaryNumber = decimalNumber2.integerToString(value);
+                    stack.push(binaryNumber);
                     System.out.println();
                     break;
 

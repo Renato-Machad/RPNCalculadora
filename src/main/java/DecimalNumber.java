@@ -22,4 +22,12 @@ public class DecimalNumber extends GeneralNumber {
     public int getValueDecimal(GeneralNumber value) {
         return value.StringToInteger(String.valueOf(value));
     }
+
+    @Override
+    public String toString() {
+        return "DecimalNumber{" +
+                "decimalNumber=" + decimalNumber +
+                ", binaryNumber=" + binaryNumber +
+                '}';
+    }
 }
