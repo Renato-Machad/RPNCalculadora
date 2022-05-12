@@ -155,20 +155,4 @@ public class RPNTest {
         assertEquals(expectedResult,actualResult);
     }
 
-
-  /*  @org.junit.Test
-    public void duplicateFirstStackElementTestSuccess() {
-        //Arrange
-        RPN rpn = new RPN();
-        Stack stack = rpn.getStack();
-        stack.push(2);
-        int expectedResult = 0;
-
-        //Act
-        rpn.duplicateFirstStackElement();
-
-        //Assert
-        assertEquals(expectedResult,stack.pull());
-    }*/
-
 }

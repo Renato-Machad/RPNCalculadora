@@ -20,7 +20,7 @@ public class Stack {
         return new Node(top.getData(), top.getNext());
     }
 
-    public void push(int data) {
+    public void push(GeneralNumber data) {
         if (top == null) // stack nao tem nada
             top = new Node(data);
         else {
@@ -35,12 +35,15 @@ public class Stack {
 //        top = novo;
 //    }
 
-    public int pull() {
-        //if (size == 0);
-        final int data = top.getData();
-        top = top.getNext();
-        size--;
-        return data;
+    public GeneralNumber pull() {
+        if (size == 0) {
+            return null;
+        } else {
+            final GeneralNumber data = top.getData();
+            top = top.getNext();
+            size--;
+            return data;
+        }
     }
 
     public boolean isEmpty() {
