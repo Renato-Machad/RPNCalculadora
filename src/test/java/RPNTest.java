@@ -119,14 +119,13 @@ public class RPNTest {
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
 
-        int expectedResult = 2;
+        boolean expectedResult = false;
 
         //Act
         rpn.convertIntoNegative((stack.getTop()).getData());
-        Node node = stack.getTop();
 
         //Assert
-        assertEquals(expectedResult, node.getData());
+        assertEquals(expectedResult, rpn.convertIntoNegative((stack.getTop()).getData()));
     }
 
     //US04
