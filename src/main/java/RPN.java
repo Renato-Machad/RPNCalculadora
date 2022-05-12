@@ -78,12 +78,14 @@ public class RPN {
     public void convertIntoNegative(GeneralNumber lastInput) {
         GeneralNumber a = stack.pull();
         int value;
-        if (a. 0) {
-            value = a;
+        int a2 = a.getValueDecimal(a);
+        if (a2 <=0) {
+           value = a2;
         } else {
-            value = a * (-1);
+            value = a2 * (-1);
         }
-        stack.push(value);
+        DecimalNumber result = new DecimalNumber(value);
+        stack.push(result);
     }
 
     public String listNumberNodes(int number) {
