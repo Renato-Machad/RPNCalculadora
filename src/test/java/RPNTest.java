@@ -14,12 +14,13 @@ public class RPNTest {
         stack.push(decimalNumber);
         stack.push(decimalNumber2);
         int expectedResult = 4;
+        GeneralNumber decimalNumber3 = new DecimalNumber(expectedResult);
 
         //Act
         rpn.sum();
 
         //Assert
-        assertEquals(expectedResult, stack.pull());
+        assertEquals(decimalNumber3.getValueDecimal(decimalNumber3), stack.pull().getValueDecimal(decimalNumber3));
     }
 
     @Test
@@ -109,21 +110,20 @@ public class RPNTest {
         assertEquals(expectedResult, node.getData());
     }
 
-    @Test
-    public void convertIntoNegativeTestUnsuccess() { //O caso de insucesso é a stack estar vazia, tem de ser alterado!!!!
-        //Arrange
-        RPN rpn = new RPN();
-        Stack stack = rpn.getStack();
-
-        int expectedResult = 2;
-
-        //Act
-        rpn.convertIntoNegative((stack.getTop()).getData());
-        Node node = stack.getTop();
-
-        //Assert
-        assertEquals(expectedResult, node.getData());
-    }
+//    @Test
+//    public void convertIntoNegativeTestUnsuccess() { //O caso de insucesso é a stack estar vazia, tem de ser alterado!!!!
+//        //Arrange
+//        RPN rpn = new RPN();
+//        Stack stack = rpn.getStack();
+//
+//        //int expectedResult = 2;
+//
+//        //Act
+//        rpn.convertIntoNegative((stack.getTop()).getData());
+//
+//        //Assert
+//        assertNull(null, ));
+//    }
 
     //US04
     @Test
