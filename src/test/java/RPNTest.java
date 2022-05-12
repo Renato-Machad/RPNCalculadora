@@ -132,10 +132,10 @@ public class RPNTest {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
-        stack.push(7);
-        stack.push(3);
-        stack.push(2);
-        stack.push(4);
+        stack.push(new BinaryNumber("3"));
+        stack.push(new DecimalNumber(3));
+        stack.push(new DecimalNumber(2));
+        stack.push(new DecimalNumber(4));
         int numberOfElementsToList = 3;
         String expectedResult = "List:\n4\n2\n3\n";
 
@@ -152,8 +152,8 @@ public class RPNTest {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
-        stack.push(7);
-        stack.push(3);
+        stack.push(new BinaryNumber("5"));
+        stack.push(new DecimalNumber(2));
         int numberOfElementsToList = 3;
         String expectedResult = "The list is smaller than that number";
 
