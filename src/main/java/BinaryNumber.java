@@ -5,7 +5,7 @@ public class BinaryNumber extends GeneralNumber {
     public BinaryNumber(String binaryNumber){
         this.binaryNumber = binaryNumber;
     }
-
+//to fix branch
     @Override
     public GeneralNumber integerToString(int value) {
         String binaryString = Integer.toBinaryString(value);
