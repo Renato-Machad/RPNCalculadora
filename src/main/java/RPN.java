@@ -49,7 +49,7 @@ public class RPN {
             int b = b2.getValueDecimal(b2);
             if (a != 0) {
                 int result = b / a;
-                DecimalNumber resultGeneral = new DecimalNumber();
+                DecimalNumber resultGeneral = new DecimalNumber(result);
                 stack.push(resultGeneral);
                 return true;
             } else {
