@@ -102,7 +102,7 @@ public class RPN {
 
 
     public boolean duplicateFirstStackElement() {
-        if (stack.getSize() > 1) {
+        if (stack.getSize() >= 1) {
             int a = stack.pull();
             stack.push(a);
             stack.push(a);
