@@ -39,28 +39,44 @@ public class RPNCalculator implements Binary {
                     break;
 
                 case 5:
-                    rpn.duplicateFirstStackElement();
-                    System.out.println((stack.getTop()).getData());
+                    if (rpn.duplicateFirstStackElement()) {
+                        System.out.println((stack.getTop()).getData());
+                    } else {
+                        System.out.println("Invalid Operation. Add one or more elements the the stack.");
+                    }
                     break;
 
                 case 10:
-                    rpn.sum();
-                    System.out.println((stack.getTop()).getData());
+                    if (rpn.sum()) {
+                        System.out.println((stack.getTop()).getData());
+                    } else {
+                        System.out.println("Invalid Operation. Add at least two elements to the stack.");
+                    }
                     break;
 
                 case 11:
-                    rpn.multiply();
-                    System.out.println((stack.getTop()).getData());
+                    if (rpn.multiply()) {
+                        System.out.println((stack.getTop()).getData());
+                    } else {
+                        System.out.println("Invalid Operation. Add at least two elements to the stack.");
+                    }
+
                     break;
 
                 case 12:
-                    rpn.divide();
-                    System.out.println((stack.getTop()).getData());
+                    if (rpn.divide()) {
+                        System.out.println((stack.getTop()).getData());
+                    } else {
+                        System.out.println("Invalid Operation. Add at least two elements to the stack.");
+                    }
                     break;
 
                 case 13:
-                    rpn.minus();
-                    System.out.println((stack.getTop()).getData());
+                    if (rpn.minus()) {
+                        System.out.println((stack.getTop()).getData());
+                    } else {
+                        System.out.println("Invalid Operation. Add at least two elements to the stack.");
+                    }
                     break;
 
                 case 14:
@@ -69,6 +85,7 @@ public class RPNCalculator implements Binary {
                     break;
 
                 case 40:
+                    System.out.println("Type the expression:");
                     value = read.nextLine();
                     String binary = rpn.decimalToBinaryConverter(Integer.parseInt(value));
                     System.out.println(binary);
@@ -95,7 +112,7 @@ public class RPNCalculator implements Binary {
                 "12 - Replace the first two elements of the stack by dividing the second with the first \n" +
                 "13 - Replace the first two elements of the stack by subtracting the second with the first \n" +
                 "14 - Replace the first element of the stack by its negative \n" +
-                "40 - Decimal to binary converter \n" +
+                "40 - Add decimal number to convert to binary\n" +
                 "99 - Quit");
         return option = read.nextInt();
     }
