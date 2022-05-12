@@ -8,8 +8,9 @@ public class DecimalNumber extends GeneralNumber{
     }
 
     @Override
-    public  GeneralNumber integerToString(int value) {
-        return null;
+    public GeneralNumber integerToString(int value) {
+        GeneralNumber decimalNumber = new DecimalNumber(value);
+        return decimalNumber;
     }
 
     @Override
