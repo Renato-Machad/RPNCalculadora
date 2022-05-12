@@ -26,9 +26,6 @@ public class DecimalNumber extends GeneralNumber {
 
     @Override
     public String toString() {
-        return "DecimalNumber{" +
-                "decimalNumber=" + decimalNumber +
-                ", binaryNumber=" + binaryNumber +
-                '}';
+        return "DecimalNumber:" + decimalNumber ;
     }
 }
