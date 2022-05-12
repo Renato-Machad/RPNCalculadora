@@ -3,7 +3,7 @@ public class BinaryNumber extends GeneralNumber {
     private String binaryNumber;
 
     public BinaryNumber(String value) {
-        this.binaryNumber = binaryNumber;
+        this.binaryNumber = value;
     }
 
     @Override
