@@ -82,8 +82,11 @@ public class RPNCalculator {
                     break;
 
                 case 14:
-                    rpn.convertIntoNegative((stack.getTop()).getData());
-                    System.out.println((stack.getTop()).getData());
+                    Boolean outcome = rpn.convertIntoNegative();
+                    if (outcome){
+                    System.out.println((stack.getTop()).getData());}
+                    else
+                        System.out.println("There are no elements in the stack");
                     break;
 
                 case 40:

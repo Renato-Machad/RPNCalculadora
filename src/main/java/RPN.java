@@ -75,7 +75,7 @@ public class RPN {
         return true;
     }
 
-    public boolean convertIntoNegative(GeneralNumber lastInput) {
+    public boolean convertIntoNegative() {
         if (stack.getSize() < 1) {
             return false;
         } else {

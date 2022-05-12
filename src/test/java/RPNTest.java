@@ -106,7 +106,7 @@ public class RPNTest {
         GeneralNumber expectedResult = new DecimalNumber(-2);
 
         //Act
-        rpn.convertIntoNegative((stack.getTop()).getData());
+        rpn.convertIntoNegative();
         Node node = stack.getTop();
 
         //Assert
@@ -122,10 +122,10 @@ public class RPNTest {
         boolean expectedResult = false;
 
         //Act
-        rpn.convertIntoNegative((stack.getTop()).getData());
+        rpn.convertIntoNegative();
 
         //Assert
-        assertEquals(expectedResult, rpn.convertIntoNegative((stack.getTop()).getData()));
+        assertEquals(expectedResult, rpn.convertIntoNegative());
     }
 
     //US04
