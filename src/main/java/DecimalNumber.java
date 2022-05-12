@@ -23,5 +23,11 @@ public class DecimalNumber extends GeneralNumber{
         return value.StringToInteger(String.valueOf(value));
     }
 
-
+    @Override
+    public String toString() {
+        return "DecimalNumber{" +
+                "decimalNumber=" + decimalNumber +
+                ", binaryNumber=" + binaryNumber +
+                '}';
+    }
 }
