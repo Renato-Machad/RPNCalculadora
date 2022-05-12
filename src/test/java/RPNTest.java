@@ -136,7 +136,7 @@ public class RPNTest {
         stack.push(new DecimalNumber(2));
         stack.push(new DecimalNumber(4));
         int numberOfElementsToList = 3;
-        String expectedResult = "List:\n4\n2\n3\n";
+        String expectedResult = "List:\nDecimalNumber:4\nDecimalNumber:2\nDecimalNumber:3\n";
 
         //Act
         String actualResult = rpn.listNumberNodes(numberOfElementsToList);
