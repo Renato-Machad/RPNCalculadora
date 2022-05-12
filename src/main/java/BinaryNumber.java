@@ -4,6 +4,9 @@ public class BinaryNumber extends GeneralNumber {
 
     public BinaryNumber(String value) {
         this.binaryNumber = value;
+
+    public BinaryNumber(String binaryNumber){
+        this.binaryNumber = binaryNumber;
     }
 
     @Override
@@ -22,7 +25,6 @@ public class BinaryNumber extends GeneralNumber {
     public int getValueDecimal(GeneralNumber value) {
         return value.StringToInteger(String.valueOf(value));
     }
-
 
     @Override
     public String toString() {

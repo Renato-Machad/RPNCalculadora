@@ -86,10 +86,11 @@ public class RPNCalculator {
                 case 40:
                     System.out.println("Type the expression:");
                     value = read.nextInt();
-                    DecimalNumber decimalNumber2 = new DecimalNumber(value);
-                    GeneralNumber binaryNumber = decimalNumber2.integerToString(value);
+                    String valueString = String.valueOf(value);
+                    BinaryNumber binaryNumber2 = new BinaryNumber(valueString);
+                    GeneralNumber binaryNumber = binaryNumber2.integerToString(value);
                     stack.push(binaryNumber);
-                    System.out.println();
+                    System.out.println(binaryNumber);
                     break;
 
                 default:
