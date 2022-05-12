@@ -42,7 +42,7 @@ public class RPNCalculator implements Binary {
                     if (rpn.duplicateFirstStackElement()) {
                         System.out.println((stack.getTop()).getData());
                     } else {
-                        System.out.println("Invalid Operation. Add one or more elements the the stack.");
+                        System.out.println("Invalid Operation. Add one or more elements to the stack.");
                     }
                     break;
 
@@ -60,7 +60,6 @@ public class RPNCalculator implements Binary {
                     } else {
                         System.out.println("Invalid Operation. Add at least two elements to the stack.");
                     }
-
                     break;
 
                 case 12:
