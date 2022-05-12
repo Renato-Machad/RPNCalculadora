@@ -43,8 +43,10 @@ public class RPNTest {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
-        stack.push(4);
-        stack.push(2);
+        DecimalNumber a = new DecimalNumber(4);
+        DecimalNumber b = new DecimalNumber(2);
+        stack.push(a);
+        stack.push(b);
         int expectedResult = 2;
 
         //Act
@@ -52,6 +54,22 @@ public class RPNTest {
 
         //Assert
         assertEquals(expectedResult,stack.pull());
+    }
+
+    @org.junit.Test
+    public void divideTestFail() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        DecimalNumber a = new DecimalNumber(4);
+        stack.push(a);
+        boolean expectedResult = false;
+
+        //Act
+        rpn.divide();
+
+        //Assert
+        assertEquals(expectedResult,rpn.divide());
     }
 
     @org.junit.Test
@@ -154,5 +172,7 @@ public class RPNTest {
         //Assert
         assertEquals(expectedResult,actualResult);
     }
+
+
 
 }

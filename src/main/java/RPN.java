@@ -37,15 +37,18 @@ public class RPN {
         if (stack.getSize() < 2) {
             return false;
         } else {
-            int a = stack.pull();
-            int b = stack.pull();
+            GeneralNumber a2 = stack.pull();
+            GeneralNumber b2 = stack.pull();
+            int a = a2.getValueDecimal(a2);
+            int b = b2.getValueDecimal(b2);
             if (a != 0) {
                 int result = b / a;
-                stack.push(result);
+                DecimalNumber resultGeneral = new DecimalNumber();
+                stack.push(resultGeneral);
                 return true;
             } else {
-                stack.push(b);
-                stack.push(a);
+                stack.push(b2);
+                stack.push(a2);
                 return false;
             }
         }
