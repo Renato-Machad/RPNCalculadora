@@ -10,14 +10,16 @@ public class BinaryNumberTest {
         int value = 5;
         String valueString = String.valueOf(value); // "5"
         String valueEmBinário = "101";
+        BinaryNumber binaryNumber = new BinaryNumber(valueString);
+        GeneralNumber binaryNumber2 = binaryNumber.integerToString(value);
 
         //Act
-        BinaryNumber binaryNumber = new BinaryNumber(valueString);
-        GeneralNumber binaryNumber1 = binaryNumber.integerToString(value);
+        BinaryNumber binaryNumber3 = new BinaryNumber(valueString);
+        GeneralNumber binaryNumber1 = binaryNumber3.integerToString(value);
 
 
         //Assert
-        assertEquals(binaryNumber1, valueEmBinário);
+        assertEquals(binaryNumber2, binaryNumber1);
     }
 
     @Test
