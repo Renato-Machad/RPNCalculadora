@@ -10,9 +10,11 @@ public class RPNTest {
     public void sumTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
+        GeneralNumber decimalNumber = new DecimalNumber(2);
+        GeneralNumber decimalNumber2 = new DecimalNumber(2);
         Stack stack = rpn.getStack();
-        stack.push(2);
-        stack.push(2);
+        stack.push(decimalNumber);
+        stack.push(decimalNumber2);
         int expectedResult = 4;
 
         //Act
@@ -26,9 +28,11 @@ public class RPNTest {
     public void multiplyTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
+        GeneralNumber decimalNumber = new DecimalNumber(2);
+        GeneralNumber decimalNumber2 = new DecimalNumber(3);
         Stack stack = rpn.getStack();
-        stack.push(2);
-        stack.push(3);
+        stack.push(decimalNumber);
+        stack.push(decimalNumber2);
         int expectedResult = 6;
 
         //Act
@@ -43,8 +47,10 @@ public class RPNTest {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
-        stack.push(4);
-        stack.push(2);
+        DecimalNumber a = new DecimalNumber(4);
+        DecimalNumber b = new DecimalNumber(2);
+        stack.push(a);
+        stack.push(b);
         int expectedResult = 2;
 
         //Act
@@ -55,12 +61,30 @@ public class RPNTest {
     }
 
     @org.junit.Test
-    public void minusTestSuccess() {
+    public void divideTestFail() {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
-        stack.push(2);
-        stack.push(2);
+        DecimalNumber a = new DecimalNumber(4);
+        stack.push(a);
+        boolean expectedResult = false;
+
+        //Act
+        rpn.divide();
+
+        //Assert
+        assertEquals(expectedResult,rpn.divide());
+    }
+
+    @org.junit.Test
+    public void minusTestSuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        GeneralNumber decimalNumber = new DecimalNumber(2);
+        GeneralNumber decimalNumber2 = new DecimalNumber(2);
+        Stack stack = rpn.getStack();
+        stack.push(decimalNumber);
+        stack.push(decimalNumber2);
         int expectedResult = 0;
 
         //Act
@@ -154,5 +178,7 @@ public class RPNTest {
         //Assert
         assertEquals(expectedResult,actualResult);
     }
+
+
 
 }
