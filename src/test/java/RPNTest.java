@@ -20,7 +20,7 @@ public class RPNTest {
         rpn.sum();
 
         //Assert
-        assertEquals(decimalNumber3.getValueDecimal(decimalNumber3), stack.pull().getValueDecimal(decimalNumber3));
+        assertEquals(decimalNumber3, stack.pull());
     }
 
     @Test
@@ -39,7 +39,7 @@ public class RPNTest {
         rpn.multiply();
 
         //Assert
-        assertEquals(decimalNumber3.getValueDecimal(decimalNumber3), stack.pull().getValueDecimal(decimalNumber3));
+        assertEquals(decimalNumber3, stack.pull());
     }
 
     @org.junit.Test
