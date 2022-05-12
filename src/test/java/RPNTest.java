@@ -112,6 +112,22 @@ public class RPNTest {
         //Assert
         assertEquals(expectedResult, node.getData());
     }
+    
+    @Test
+    public void convertIntoNegativeTestFail() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+
+        int expectedResult = 2;
+
+        //Act
+        rpn.convertIntoNegative((stack.getTop()).getData());
+        Node node = stack.getTop();
+
+        //Assert
+        assertEquals(expectedResult, node.getData());
+    }
 
 //    @Test
 //    public void convertIntoNegativeTestUnsuccess() { //O caso de insucesso é a stack estar vazia, tem de ser alterado!!!!
@@ -127,6 +143,7 @@ public class RPNTest {
 //        //Assert
 //        assertNull(null, ));
 //    }
+
 
     //US04
     @Test
