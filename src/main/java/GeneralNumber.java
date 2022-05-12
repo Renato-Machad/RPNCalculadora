@@ -7,8 +7,6 @@ public abstract class GeneralNumber {
 
     public abstract int getValueDecimal(GeneralNumber value);
 
-    public abstract GeneralNumber converterStackIntoInt(int value);
-
 
     //public static String getData() {
       //  return data;

@@ -23,10 +23,5 @@ public class DecimalNumber extends GeneralNumber{
         return value.StringToInteger(String.valueOf(value));
     }
 
-    @Override
-    public GeneralNumber converterStackIntoInt(int value) {
-        GeneralNumber valueGeneral = new BinaryNumber(value);
-        return valueGeneral;
-    }
 
 }
