@@ -105,14 +105,6 @@ public class RPN {
             return "The list is empty";
     }
 
-
-    public String decimalToBinaryConverter(int decimal) {
-        String binary = Integer.toBinaryString(decimal);
-        stack.push(Integer.parseInt(binary));
-        return binary;
-    }
-
-
     public boolean duplicateFirstStackElement() {
         if (stack.getSize() >= 1) {
             int a = stack.pull();
