@@ -49,7 +49,7 @@ public class RPNTest {
         DecimalNumber b = new DecimalNumber(2);
         stack.push(a);
         stack.push(b);
-        int expectedResult = 2;
+        DecimalNumber expectedResult = new DecimalNumber(2);
 
         //Act
         rpn.divide();
