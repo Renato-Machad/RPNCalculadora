@@ -24,6 +24,25 @@ public class RPNTest {
     }
 
     @Test
+    public void sumDoubleCheckTest() {
+        //Arrange
+        RPN rpn = new RPN();
+        GeneralNumber decimalNumber = new DecimalNumber(3);
+        GeneralNumber decimalNumber2 = new DecimalNumber(7);
+        Stack stack = rpn.getStack();
+        stack.push(decimalNumber);
+        stack.push(decimalNumber2);
+        int expectedResult = 10;
+        GeneralNumber decimalNumber3 = new DecimalNumber(expectedResult);
+
+        //Act
+        rpn.sum();
+
+        //Assert
+        assertEquals(decimalNumber3, stack.pull());
+    }
+
+    @Test
     public void multiplyTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
