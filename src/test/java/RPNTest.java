@@ -110,7 +110,7 @@ public class RPNTest {
     }
 
     @Test
-    public void convertIntoNegativeTestUnsuccess() { //O caso de insucesso é a stack estar vazia, tem de ser alterado!!!!
+    public void convertIntoNegativeTestFail() {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
