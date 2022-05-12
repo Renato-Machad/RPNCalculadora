@@ -25,7 +25,10 @@ public class RPNCalculator {
 
                 case 2:
                     String result = String.valueOf(stack.pull());
-                    System.out.println("First element of the stack removed.");
+                    if (result != null) {
+                        System.out.println("First element of the stack removed.");
+                    } else
+                        System.out.println("No elements in the stack to be removed.");
                     break;
 
                 case 3:
