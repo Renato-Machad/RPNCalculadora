@@ -4,8 +4,6 @@ import org.junit.Test;
 
 public class RPNTest {
 
-
-
     @Test
     public void sumTestSuccess() {
         //Arrange
@@ -21,7 +19,7 @@ public class RPNTest {
         rpn.sum();
 
         //Assert
-        assertEquals(expectedResult,stack.pull());
+        assertEquals(expectedResult, stack.pull());
     }
 
     @Test
@@ -39,7 +37,7 @@ public class RPNTest {
         rpn.multiply();
 
         //Assert
-        assertEquals(expectedResult,stack.pull());
+        assertEquals(expectedResult, stack.pull());
     }
 
     @org.junit.Test
@@ -57,7 +55,7 @@ public class RPNTest {
         rpn.divide();
 
         //Assert
-        assertEquals(expectedResult,stack.pull());
+        assertEquals(expectedResult, stack.pull());
     }
 
     @org.junit.Test
@@ -73,7 +71,7 @@ public class RPNTest {
         rpn.divide();
 
         //Assert
-        assertEquals(expectedResult,rpn.divide());
+        assertEquals(expectedResult, rpn.divide());
     }
 
     @org.junit.Test
@@ -91,7 +89,7 @@ public class RPNTest {
         rpn.minus();
 
         //Assert
-        assertEquals(expectedResult,stack.pull());
+        assertEquals(expectedResult, stack.pull());
     }
 
     @Test
@@ -99,7 +97,8 @@ public class RPNTest {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
-        stack.push(2);
+        GeneralNumber decimalNumber = new DecimalNumber(2);
+        stack.push(decimalNumber);
         int expectedResult = -2;
 
         //Act
@@ -107,7 +106,7 @@ public class RPNTest {
         Node node = stack.getTop();
 
         //Assert
-        assertEquals(expectedResult,node.getData());
+        assertEquals(expectedResult, node.getData());
     }
 
     @Test
@@ -123,7 +122,7 @@ public class RPNTest {
         Node node = stack.getTop();
 
         //Assert
-        assertEquals(expectedResult,node.getData());
+        assertEquals(expectedResult, node.getData());
     }
 
     //US04
@@ -143,7 +142,7 @@ public class RPNTest {
         String actualResult = rpn.listNumberNodes(numberOfElementsToList);
 
         //Assert
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult, actualResult);
     }
 
     //US04
@@ -161,7 +160,7 @@ public class RPNTest {
         String actualResult = rpn.listNumberNodes(numberOfElementsToList);
 
         //Assert
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult, actualResult);
     }
 
     //US04
@@ -176,9 +175,6 @@ public class RPNTest {
         String actualResult = rpn.listNumberNodes(numberOfElementsToList);
 
         //Assert
-        assertEquals(expectedResult,actualResult);
+        assertEquals(expectedResult, actualResult);
     }
-
-
-
 }
