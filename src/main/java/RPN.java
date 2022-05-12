@@ -13,10 +13,13 @@ public class RPN {
         if (stack.getSize() < 2) {
             return false;
         } else {
-            int a = stack.pull();
-            int b = stack.pull();
-            int result = a + b;
-            stack.push(result);
+            GeneralNumber a = stack.pull();
+            GeneralNumber b = stack.pull();
+            int a2 = a.getValueDecimal(a);
+            int b2 = b.getValueDecimal(b);
+            int result = a2 + b2;
+            DecimalNumber resultGeneral = new DecimalNumber(result);
+            stack.push(resultGeneral);
             return true;
         }
     }
