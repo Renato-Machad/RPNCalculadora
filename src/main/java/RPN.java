@@ -1,5 +1,3 @@
-import Converters.Binary;
-
 public class RPN {
     private static Stack stack;
 
@@ -57,18 +55,21 @@ public class RPN {
         if (stack.getSize() < 2) {
             return false;
         } else {
-            int a = stack.pull();
-            int b = stack.pull();
-            int result = b - a;
-            stack.push(result);
+            GeneralNumber a = stack.pull();
+            GeneralNumber b = stack.pull();
+            int a2 = a.getValueDecimal(a);
+            int b2 = b.getValueDecimal(b);
+            int result = b2 - a2;
+            DecimalNumber resultGeneral = new DecimalNumber(result);
+            stack.push(resultGeneral);
         }
         return true;
     }
 
-    public void convertIntoNegative(int lastInput) {
-        int a = stack.pull();
+    public void convertIntoNegative(GeneralNumber lastInput) {
+        GeneralNumber a = stack.pull();
         int value;
-        if (a <= 0) {
+        if (a. 0) {
             value = a;
         } else {
             value = a * (-1);

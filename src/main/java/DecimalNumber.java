@@ -13,9 +13,20 @@ public class DecimalNumber extends GeneralNumber{
     }
 
     @Override
-    public int StringToInteger() {
+    public int StringToInteger(String value) {
         int number = Integer.parseInt(String.valueOf(binaryNumber),2);
         return number;
+    }
+
+    @Override
+    public int getValueDecimal(GeneralNumber value) {
+        return value.StringToInteger(String.valueOf(value));
+    }
+
+    @Override
+    public GeneralNumber converterStackIntoInt(int value) {
+        GeneralNumber valueGeneral = new BinaryNumber(value);
+        return valueGeneral;
     }
 
 }

@@ -7,8 +7,7 @@ public class RPNCalculator implements Binary {
     public static void main(String[] args) {
         Stack stack = new Stack();
         RPN rpn = new RPN();
-        String value;
-        BinaryNumber binaryNumber = new BinaryNumber();
+        int value = 0;
 
 
         System.out.println("---RPN Calculator---\n");
@@ -21,8 +20,9 @@ public class RPNCalculator implements Binary {
             switch (x = RPNCalculator.reader()) {
                 case 1:
                     System.out.println("Type the expression:");
-                    value = read.nextLine();
-                    stack.push(Integer.parseInt(value));
+                    value = read.nextInt();
+                    DecimalNumber decimalNumber = new DecimalNumber(value);
+                    stack.push(decimalNumber);
                     break;
 
                 case 2:
@@ -66,9 +66,11 @@ public class RPNCalculator implements Binary {
                     break;
 
                 case 40:
-                    value = read.nextLine();
-                    binaryNumber.integerToString(Integer.parseInt(value));
-                    System.out.println(value);
+                    System.out.println("Type the expression:");
+                    value = read.nextInt();
+                    DecimalNumber decimalNumber2 = new DecimalNumber(value);
+                    decimalNumber2.integerToString(value);
+                    System.out.println();
                     break;
 
                 default:

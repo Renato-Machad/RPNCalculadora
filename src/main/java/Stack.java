@@ -36,11 +36,14 @@ public class Stack {
 //    }
 
     public GeneralNumber pull() {
-        //if (size == 0);
-        final GeneralNumber data = top.getData();
-        top = top.getNext();
-        size--;
-        return data;
+        if (size == 0) {
+            return null;
+        } else {
+            final GeneralNumber data = top.getData();
+            top = top.getNext();
+            size--;
+            return data;
+        }
     }
 
     public boolean isEmpty() {
