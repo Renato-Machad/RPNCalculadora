@@ -8,6 +8,8 @@ public class RPNCalculator implements Binary {
         Stack stack = new Stack();
         RPN rpn = new RPN();
         String value;
+        BinaryNumber binaryNumber = new BinaryNumber();
+
 
         System.out.println("---RPN Calculator---\n");
 
@@ -65,8 +67,8 @@ public class RPNCalculator implements Binary {
 
                 case 40:
                     value = read.nextLine();
-                    String binary = rpn.decimalToBinaryConverter(Integer.parseInt(value));
-                    System.out.println(binary);
+                    binaryNumber.integerToString(Integer.parseInt(value));
+                    System.out.println(value);
                     break;
 
                 default:

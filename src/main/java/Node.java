@@ -1,21 +1,21 @@
 public class Node {
 
-    private int data;
+    private GeneralNumber data;
     private Node next; //proximo elemento da lista, referência ou apontador para o seguinte
 
     public Node() {
     }
 
-    public Node(int data) {
+    public Node(GeneralNumber data) {
         this.data = data;
     }
 
-    public Node(int data, Node next) {
+    public Node(GeneralNumber data, Node next) {
         this.data = data;
         this.next = next;
     }
 
-    public int getData() {
+    public GeneralNumber getData() {
         return data;
     }
 
