@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class DecimalNumber extends GeneralNumber {
 
     private int decimalNumber;
@@ -26,5 +28,18 @@ public class DecimalNumber extends GeneralNumber {
     @Override
     public String toString() {
         return "DecimalNumber:" + decimalNumber ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof DecimalNumber)) return false;
+        DecimalNumber that = (DecimalNumber) o;
+        return decimalNumber == that.decimalNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(decimalNumber);
     }
 }

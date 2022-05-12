@@ -99,7 +99,7 @@ public class RPNTest {
         Stack stack = rpn.getStack();
         GeneralNumber decimalNumber = new DecimalNumber(2);
         stack.push(decimalNumber);
-        int expectedResult = -2;
+        GeneralNumber expectedResult = new DecimalNumber(-2);
 
         //Act
         rpn.convertIntoNegative((stack.getTop()).getData());
