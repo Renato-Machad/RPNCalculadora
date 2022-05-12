@@ -26,10 +26,13 @@ public class RPN {
 
     public boolean multiply() {
         if (stack.getSize() >= 2) {
-            int a = stack.pull();
-            int b = stack.pull();
-            int result = a * b;
-            stack.push(result);
+            GeneralNumber a = stack.pull();
+            GeneralNumber b = stack.pull();
+            int a2 = a.getValueDecimal(a);
+            int b2 = b.getValueDecimal(b);
+            int result = a2 * b2;
+            DecimalNumber resultGeneral = new DecimalNumber(result);
+            stack.push(resultGeneral);
         } else {
             return false;
         }
