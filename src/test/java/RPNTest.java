@@ -43,6 +43,25 @@ public class RPNTest {
     }
 
     @Test
+    public void sumBinaryTestSuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        GeneralNumber binaryNumber1 = new BinaryNumber("101");
+        GeneralNumber binaryNumber2 = new BinaryNumber("101");
+        Stack stack = rpn.getStack();
+        stack.push(binaryNumber1);
+        stack.push(binaryNumber2);
+        int expectedResult = 10;
+        GeneralNumber decimalNumber = new DecimalNumber(expectedResult);
+
+        //Act
+        rpn.sum();
+
+        //Assert
+        assertEquals(decimalNumber, stack.pull());
+    }
+
+    @Test
     public void multiplyTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -219,7 +238,7 @@ public class RPNTest {
     }
 
     @Test
-    public void duplicateFirstStackElementSuccess() {
+    public void duplicateFirstStackElementTestSuccess() {
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
         GeneralNumber decimalNumber1 = new DecimalNumber(3);
