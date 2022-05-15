@@ -15,8 +15,19 @@ public class RPN {
         } else {
             GeneralNumber a = stack.pull();
             GeneralNumber b = stack.pull();
-            int a2 = a.getValueDecimal(a);
-            int b2 = b.getValueDecimal(b);
+
+            int a2;
+            int b2;
+            if ( a instanceof BinaryNumber) {
+                a2 = Integer.parseInt(String.valueOf(a.getValueDecimal()),2);
+            }else{
+                a2 = a.getValueDecimal();
+            }
+            if ( b instanceof BinaryNumber) {
+                b2 = Integer.parseInt(String.valueOf(b.getValueDecimal()),2);
+            }else{
+                b2 = b.getValueDecimal();
+            }
             int result = a2 + b2;
             DecimalNumber resultGeneral = new DecimalNumber(result);
             stack.push(resultGeneral);
@@ -28,8 +39,8 @@ public class RPN {
         if (stack.getSize() >= 2) {
             GeneralNumber a = stack.pull();
             GeneralNumber b = stack.pull();
-            int a2 = a.getValueDecimal(a);
-            int b2 = b.getValueDecimal(b);
+            int a2 = a.getValueDecimal();
+            int b2 = b.getValueDecimal();
             int result = a2 * b2;
             DecimalNumber resultGeneral = new DecimalNumber(result);
             stack.push(resultGeneral);
@@ -43,18 +54,18 @@ public class RPN {
         if (stack.getSize() < 2) {
             return false;
         } else {
-            GeneralNumber a2 = stack.pull();
-            GeneralNumber b2 = stack.pull();
-            int a = a2.getValueDecimal(a2);
-            int b = b2.getValueDecimal(b2);
-            if (a != 0) {
-                int result = b / a;
+            GeneralNumber a = stack.pull();
+            GeneralNumber b = stack.pull();
+            int a2 = a.getValueDecimal();
+            int b2 = b.getValueDecimal();
+            if (a2 != 0) {
+                int result = b2 / a2;
                 DecimalNumber resultGeneral = new DecimalNumber(result);
                 stack.push(resultGeneral);
                 return true;
             } else {
-                stack.push(b2);
-                stack.push(a2);
+                stack.push(b);
+                stack.push(a);
                 return false;
             }
         }
@@ -66,8 +77,8 @@ public class RPN {
         } else {
             GeneralNumber a = stack.pull();
             GeneralNumber b = stack.pull();
-            int a2 = a.getValueDecimal(a);
-            int b2 = b.getValueDecimal(b);
+            int a2 = a.getValueDecimal();
+            int b2 = b.getValueDecimal();
             int result = b2 - a2;
             DecimalNumber resultGeneral = new DecimalNumber(result);
             stack.push(resultGeneral);
@@ -81,7 +92,7 @@ public class RPN {
         } else {
             GeneralNumber a = stack.pull();
             int value;
-            int a2 = a.getValueDecimal(a);
+            int a2 = a.getValueDecimal();
             if (a2 <= 0) {
                 value = a2;
             } else {
@@ -115,7 +126,7 @@ public class RPN {
     public boolean duplicateFirstStackElement() {
         if (stack.getSize() >= 1) {
             GeneralNumber a = stack.pull();
-            int a2 = a.getValueDecimal(a);
+            int a2 = a.getValueDecimal();
             DecimalNumber duplicateA = new DecimalNumber(a2);
             stack.push(duplicateA);
             stack.push(duplicateA);
