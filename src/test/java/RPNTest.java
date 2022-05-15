@@ -217,4 +217,22 @@ public class RPNTest {
         //Assert
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void duplicateFirstStackElementSuccess() {
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        GeneralNumber decimalNumber1 = new DecimalNumber(3);
+        stack.push(decimalNumber1);
+        GeneralNumber decimalNumber2 = new DecimalNumber(4);
+        stack.push(decimalNumber2);
+        GeneralNumber expectedResult = new DecimalNumber(4);
+
+        //Act
+        rpn.duplicateFirstStackElement();
+        Node node = stack.getTop();
+
+        //Assert
+        assertEquals(expectedResult, node.getData());
+    }
 }
