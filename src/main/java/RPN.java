@@ -164,13 +164,18 @@ public class RPN {
     public boolean duplicateFirstStackElement() {
         if (stack.getSize() >= 1) {
             GeneralNumber a = stack.pull();
-            int a2 = a.getValue();
+            int a2;
+            if (a instanceof BinaryNumber) {
+                a2 = Integer.parseInt(String.valueOf(a.getValue()), 2);
+            } else
+                a2 = a.getValue();
             DecimalNumber duplicateA = new DecimalNumber(a2);
-            stack.push(duplicateA);
+            stack.push(a);
             stack.push(duplicateA);
             return true;
         } else {
             return false;
         }
     }
+
 }

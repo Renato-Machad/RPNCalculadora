@@ -283,7 +283,7 @@ public class RPNTest {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
-        stack.push(new BinaryNumber("5"));
+        stack.push(new BinaryNumber("10"));
         stack.push(new DecimalNumber(2));
         int numberOfElementsToList = 3;
         String expectedResult = "The list is smaller than that number";
@@ -319,6 +319,22 @@ public class RPNTest {
         GeneralNumber decimalNumber2 = new DecimalNumber(4);
         stack.push(decimalNumber2);
         GeneralNumber expectedResult = new DecimalNumber(4);
+
+        //Act
+        rpn.duplicateFirstStackElement();
+        Node node = stack.getTop();
+
+        //Assert
+        assertEquals(expectedResult, node.getData());
+    }
+
+    @Test
+    public void duplicateFirstStackElementBinaryTestSuccess() {
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        stack.push(new BinaryNumber("101"));
+        stack.push(new BinaryNumber("1001"));
+        GeneralNumber expectedResult = new DecimalNumber(9);
 
         //Act
         rpn.duplicateFirstStackElement();
