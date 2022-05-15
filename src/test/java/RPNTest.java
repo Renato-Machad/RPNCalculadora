@@ -103,18 +103,37 @@ public class RPNTest {
     public void divideTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
-        Stack stack = rpn.getStack();
         DecimalNumber a = new DecimalNumber(4);
         DecimalNumber b = new DecimalNumber(2);
+        Stack stack = rpn.getStack();
         stack.push(a);
         stack.push(b);
-        DecimalNumber expectedResult = new DecimalNumber(2);
+        GeneralNumber expectedResult = new DecimalNumber(2);
 
         //Act
         rpn.divide();
 
         //Assert
         assertEquals(expectedResult, stack.pull());
+    }
+
+    @Test
+    public void divideBinaryTestSuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        GeneralNumber binaryNumber1 = new BinaryNumber("100");
+        GeneralNumber binaryNumber2 = new BinaryNumber("10");
+        Stack stack = rpn.getStack();
+        stack.push(binaryNumber1);
+        stack.push(binaryNumber2);
+        int expectedResult = 2;
+        GeneralNumber decimalNumber = new DecimalNumber(expectedResult);
+
+        //Act
+        rpn.divide();
+
+        //Assert
+        assertEquals(decimalNumber, stack.pull());
     }
 
     @Test
