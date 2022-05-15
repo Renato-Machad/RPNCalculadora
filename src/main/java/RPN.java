@@ -126,7 +126,6 @@ public class RPN {
     public boolean duplicateFirstStackElement() {
         if (stack.getSize() >= 1) {
             GeneralNumber a = stack.pull();
-            int a2 = a.getValueDecimal(a);
             int a2 = a.getValueDecimal();
             DecimalNumber duplicateA = new DecimalNumber(a2);
             stack.push(duplicateA);
