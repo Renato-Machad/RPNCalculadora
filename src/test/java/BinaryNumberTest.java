@@ -9,7 +9,7 @@ public class BinaryNumberTest {
         //Arrange
         int value = 5;
         String valueString = String.valueOf(value); // "5"
-        String valueEmBinário = "101";
+        String binaryValue = "101";
         BinaryNumber binaryNumber = new BinaryNumber(valueString);
         GeneralNumber binaryNumber2 = binaryNumber.integerToString(value);
 
