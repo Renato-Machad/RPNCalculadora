@@ -21,16 +21,14 @@ public class BinaryNumber extends GeneralNumber {
     }
 
     @Override
-    public int getValueDecimal(GeneralNumber value) {
-        return value.StringToInteger(String.valueOf(value));
+    public int getValueDecimal() {
+        return Integer.parseInt(binaryNumber);
     }
 
 
     @Override
     public String toString() {
-        return "BinaryNumber{" +
-                "binaryNumber='" + binaryNumber + '\'' +
-                '}';
+        return "BinaryNumber: " + binaryNumber;
     }
 
     @Override
