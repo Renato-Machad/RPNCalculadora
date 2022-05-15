@@ -1,8 +1,6 @@
-import java.util.Objects;
-
 public class DecimalNumber extends GeneralNumber {
 
-    private int decimalNumber;
+    private final int decimalNumber;
 
     public DecimalNumber(int decimalNumber) {
         this.decimalNumber = decimalNumber;
@@ -27,7 +25,7 @@ public class DecimalNumber extends GeneralNumber {
 
     @Override
     public String toString() {
-        return "DecimalNumber:" + decimalNumber ;
+        return "DecimalNumber:" + decimalNumber;
     }
 
     @Override
