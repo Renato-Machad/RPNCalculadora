@@ -125,7 +125,12 @@ public class RPN {
         } else {
             GeneralNumber a = stack.pull();
             int value;
-            int a2 = a.getValue();
+            int a2;
+            if (a instanceof BinaryNumber) {
+                a2 = Integer.parseInt(String.valueOf(a.getValue()), 2);
+            } else {
+                a2 = a.getValue();
+            }
             if (a2 <= 0) {
                 value = a2;
             } else {
