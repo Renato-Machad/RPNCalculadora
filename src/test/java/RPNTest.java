@@ -207,6 +207,22 @@ public class RPNTest {
         assertEquals(expectedResult, node.getData());
     }
 
+    @Test
+    public void convertIntoNegativeBinaryTestSuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        stack.push(new BinaryNumber("10101"));
+        GeneralNumber expectedResult = new DecimalNumber(-21);
+
+        //Act
+        rpn.convertIntoNegative();
+        Node node = stack.getTop();
+
+        //Assert
+        assertEquals(expectedResult, node.getData());
+    }
+
     //erro ortografico
     @Test
     public void convertIntoNexgativeTestFail() {
