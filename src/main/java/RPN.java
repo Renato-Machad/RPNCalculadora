@@ -165,6 +165,7 @@ public class RPN {
         if (stack.getSize() >= 1) {
             GeneralNumber a = stack.pull();
             int a2;
+
             if (a instanceof BinaryNumber) {
                 a2 = Integer.parseInt(String.valueOf(a.getValue()), 2);
             } else
