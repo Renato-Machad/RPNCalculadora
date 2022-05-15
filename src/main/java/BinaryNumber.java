@@ -21,7 +21,7 @@ public class BinaryNumber extends GeneralNumber {
     }
 
     @Override
-    public int getValueDecimal() {
+    public int getValue() {
         return Integer.parseInt(binaryNumber);
     }
 

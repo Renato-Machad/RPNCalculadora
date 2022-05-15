@@ -29,7 +29,7 @@ public class BinaryNumberTest {
 
         //Act
         DecimalNumber resultDecimal = new DecimalNumber(number);
-        int resultNumber = resultDecimal.getValueDecimal();
+        int resultNumber = resultDecimal.getValue();
 
         //Assert
         assertEquals(number, resultNumber);

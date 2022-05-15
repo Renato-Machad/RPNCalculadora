@@ -19,7 +19,7 @@ public class DecimalNumber extends GeneralNumber {
     }
 
     @Override
-    public int getValueDecimal() {
+    public int getValue() {
         return this.decimalNumber;
     }
 
