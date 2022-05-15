@@ -7,7 +7,7 @@ public class DecimalNumber extends GeneralNumber {
     }
 
     @Override
-    public GeneralNumber integerToString(int value) {
+    public GeneralNumber decimalToBinary(int value) {
         GeneralNumber decimalNumber = new DecimalNumber(value);
         return decimalNumber;
     }

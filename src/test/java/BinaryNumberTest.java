@@ -12,7 +12,7 @@ public class BinaryNumberTest {
 
         //Act
         BinaryNumber binaryNumber = new BinaryNumber(valueString);
-        GeneralNumber result = binaryNumber.integerToString(5);
+        GeneralNumber result = binaryNumber.decimalToBinary(5);
 
 
         //Assert

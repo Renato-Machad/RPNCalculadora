@@ -9,7 +9,7 @@ public class BinaryNumber extends GeneralNumber {
     }
 
     @Override
-    public GeneralNumber integerToString(int value) {
+    public GeneralNumber decimalToBinary(int value) {
         String binaryString = Integer.toBinaryString(value);
         BinaryNumber binaryNumber = new BinaryNumber(binaryString);
         return binaryNumber;

@@ -94,7 +94,7 @@ public class RPNCalculator {
                     value = read.nextInt();
                     String valueString = String.valueOf(value);
                     BinaryNumber binaryNumber2 = new BinaryNumber(valueString);
-                    GeneralNumber binaryNumber = binaryNumber2.integerToString(value);
+                    GeneralNumber binaryNumber = binaryNumber2.decimalToBinary(value);
                     stack.push(binaryNumber);
                     System.out.println(binaryNumber);
                     break;
