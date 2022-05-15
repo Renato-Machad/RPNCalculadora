@@ -206,7 +206,8 @@ public class RPNTest {
         //Assert
         assertEquals(expectedResult, node.getData());
     }
-    
+
+    //erro ortografico
     @Test
     public void convertIntoNexgativeTestFail() {
         //Arrange
@@ -234,6 +235,24 @@ public class RPNTest {
         stack.push(new DecimalNumber(4));
         int numberOfElementsToList = 3;
         String expectedResult = "List:\nDecimalNumber:4\nDecimalNumber:2\nDecimalNumber:3\n";
+
+        //Act
+        String actualResult = rpn.listNumberNodes(numberOfElementsToList);
+
+        //Assert
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void listNumberStackBinarySuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        stack.push(new DecimalNumber(3));
+        stack.push(new BinaryNumber("10101"));
+        stack.push(new BinaryNumber("1001001"));
+        int numberOfElementsToList = 2;
+        String expectedResult = "List:\nBinaryNumber: 1001001\nBinaryNumber: 10101\n";
 
         //Act
         String actualResult = rpn.listNumberNodes(numberOfElementsToList);
