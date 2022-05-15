@@ -67,8 +67,19 @@ public class RPN {
         } else {
             GeneralNumber a = stack.pull();
             GeneralNumber b = stack.pull();
-            int a2 = a.getValue();
-            int b2 = b.getValue();
+
+            int a2;
+            int b2;
+            if (a instanceof BinaryNumber) {
+                a2 = Integer.parseInt(String.valueOf(a.getValue()), 2);
+            } else {
+                a2 = a.getValue();
+            }
+            if (b instanceof BinaryNumber) {
+                b2 = Integer.parseInt(String.valueOf(b.getValue()), 2);
+            } else {
+                b2 = b.getValue();
+            }
             if (a2 != 0) {
                 int result = b2 / a2;
                 DecimalNumber resultGeneral = new DecimalNumber(result);
