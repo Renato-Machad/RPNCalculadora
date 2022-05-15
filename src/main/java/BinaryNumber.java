@@ -15,11 +15,11 @@ public class BinaryNumber extends GeneralNumber {
         return binaryNumber;
     }
 
-    @Override
+   /* @Override
     public int StringToInteger(String value) {
         return 0;
     }
-
+*/
     @Override
     public int getValue() {
         return Integer.parseInt(binaryNumber);

@@ -12,11 +12,11 @@ public class DecimalNumber extends GeneralNumber {
         return decimalNumber;
     }
 
-    @Override
+    /*@Override
     public int StringToInteger(String value) {
         int number = Integer.parseInt(value);
         return number;
-    }
+    }*/
 
     @Override
     public int getValue() {
