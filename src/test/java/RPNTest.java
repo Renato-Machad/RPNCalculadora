@@ -80,7 +80,26 @@ public class RPNTest {
         assertEquals(decimalNumber3, stack.pull());
     }
 
-    @org.junit.Test
+    @Test
+    public void multiplyBinaryTestSuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        GeneralNumber binaryNumber1 = new BinaryNumber("101");
+        GeneralNumber binaryNumber2 = new BinaryNumber("101");
+        Stack stack = rpn.getStack();
+        stack.push(binaryNumber1);
+        stack.push(binaryNumber2);
+        int expectedResult = 25;
+        GeneralNumber decimalNumber = new DecimalNumber(expectedResult);
+
+        //Act
+        rpn.multiply();
+
+        //Assert
+        assertEquals(decimalNumber, stack.pull());
+    }
+
+    @Test
     public void divideTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -98,7 +117,7 @@ public class RPNTest {
         assertEquals(expectedResult, stack.pull());
     }
 
-    @org.junit.Test
+    @Test
     public void divideTestFail() {
         //Arrange
         RPN rpn = new RPN();
@@ -114,7 +133,7 @@ public class RPNTest {
         assertEquals(expectedResult, rpn.divide());
     }
 
-    @org.junit.Test
+    @Test
     public void minusTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -133,7 +152,7 @@ public class RPNTest {
         assertEquals(decimalNumber, stack.pull());
     }
 
-    @org.junit.Test
+    @Test
     public void minusBinaryTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
