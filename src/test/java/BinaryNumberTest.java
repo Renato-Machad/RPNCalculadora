@@ -9,9 +9,9 @@ public class BinaryNumberTest {
         //Arrange
         int value = 101;
         String valueString = String.valueOf(value); // "5"
-        String binaryValue = "101";
-        BinaryNumber binaryNumber = new BinaryNumber(valueString);
-        GeneralNumber binaryNumber2 = binaryNumber.integerToString(value);
+        //String binaryValue = "101";
+        //BinaryNumber binaryNumber = new BinaryNumber(valueString);
+        //GeneralNumber binaryNumber2 = binaryNumber.integerToString(value);
 
         //Act
         BinaryNumber binaryNumber = new BinaryNumber(valueString);
