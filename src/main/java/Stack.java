@@ -9,7 +9,7 @@ public class Stack {
     }
 
     public Stack(Node num) {
-        this.top = num;
+        top = num;
     }
 
     public int getSize() {
@@ -30,11 +30,6 @@ public class Stack {
         }
         size++;
     }
-
-//    public void push (Node novo){
-//        novo.setNext(top);
-//        top = novo;
-//    }
 
     public GeneralNumber pull() {
         if (size == 0) {
