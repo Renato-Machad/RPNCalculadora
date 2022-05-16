@@ -21,7 +21,7 @@ public class Stack {
         return new Node(top.getData(), top.getNext());
     }
 
-    public void push(GeneralNumber data) {
+    public GeneralNumber push(GeneralNumber data) {
         if (top == null) // stack nao tem nada
             top = new Node(data);
         else {
@@ -29,6 +29,7 @@ public class Stack {
             top = current;
         }
         size++;
+        return data;
     }
 
     public GeneralNumber pull() {
