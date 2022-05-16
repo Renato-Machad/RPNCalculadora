@@ -77,4 +77,39 @@ public class StackTest {
         //Assert
         assertNull(stack.getTop().getData());
     }
+
+    //US04
+    @Test
+    public void listNodesSuccess() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        stack.push(new BinaryNumber("101"));
+        stack.push(new DecimalNumber(3));
+        stack.push(new DecimalNumber(2));
+        stack.push(new DecimalNumber(4));
+        String expectedResult = "List:\nDecimalNumber:4\nDecimalNumber:2\nDecimalNumber:3\nBinaryNumber: 101\n";
+
+        //Act
+        String actualResult = stack.listNodes();
+
+        //Assert
+        assertEquals(expectedResult, actualResult);
+    }
+
+
+    //US04
+    @Test
+    public void listNodesEmptyFail() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        String expectedResult = "The list is empty";
+
+        //Act
+        String actualResult = stack.listNodes();
+
+        //Assert
+        assertEquals(expectedResult, actualResult);
+    }
 }
