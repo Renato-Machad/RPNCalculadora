@@ -167,56 +167,30 @@ public class RPNMockitoTest {
     }
 
     @Test
-    public void divideTestSuccess() {
+    public void divideTestMockitoSuccess() {
         //Arrange
-        RPN rpn = new RPN();
-        DecimalNumber a = new DecimalNumber(4);
-        DecimalNumber b = new DecimalNumber(2);
-        Stack stack = rpn.getStack();
-        stack.push(a);
-        stack.push(b);
-        GeneralNumber expectedResult = new DecimalNumber(2);
+        when(mockStack.getSize()).thenReturn(2);
+        GeneralNumber decimalNumber = new DecimalNumber(12);
+        GeneralNumber binaryNumber2 = new BinaryNumber("11");
+        when(mockStack.pull()).thenReturn(binaryNumber2, decimalNumber);
+
+        ArgumentCaptor<DecimalNumber> expectedResult = ArgumentCaptor.forClass(DecimalNumber.class);
 
         //Act
-        rpn.divide();
+        assertTrue(rpn.divide());
 
         //Assert
-        assertEquals(expectedResult, stack.pull());
+        verify(mockStack).push(expectedResult.capture());
+        assertEquals(expectedResult.getValue().getValue(), 4);
     }
 
     @Test
-    public void divideBinaryTestSuccess() {
-        //Arrange
-        RPN rpn = new RPN();
-        GeneralNumber binaryNumber1 = new BinaryNumber("100");
-        GeneralNumber binaryNumber2 = new BinaryNumber("10");
-        Stack stack = rpn.getStack();
-        stack.push(binaryNumber1);
-        stack.push(binaryNumber2);
-        int expectedResult = 2;
-        GeneralNumber decimalNumber = new DecimalNumber(expectedResult);
+    public void divideTestMockitoFail() {
+        when(mockStack.getSize()).thenReturn(1);
+        assertFalse(rpn.divide());
 
-        //Act
-        rpn.divide();
-
-        //Assert
-        assertEquals(decimalNumber, stack.pull());
-    }
-
-    @Test
-    public void divideTestFail() {
-        //Arrange
-        RPN rpn = new RPN();
-        Stack stack = rpn.getStack();
-        DecimalNumber a = new DecimalNumber(4);
-        stack.push(a);
-        boolean expectedResult = false;
-
-        //Act
-        rpn.divide();
-
-        //Assert
-        assertEquals(expectedResult, rpn.divide());
+        when(mockStack.getSize()).thenReturn(0);
+        assertFalse(rpn.divide());
     }
 
     @Test
