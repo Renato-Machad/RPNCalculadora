@@ -26,8 +26,8 @@ public class RPNCalculatorTest {
     @Mock
     Stack stack;
 
-    @Mock
-    Node node;
+    //@Mock
+    //Node node;
 
 
 //    @Test
