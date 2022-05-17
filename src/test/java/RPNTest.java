@@ -241,7 +241,7 @@ public class RPNTest {
 
     //US04
     @Test
-    public void listNumberStackSuccess() {
+    public void listNFisrtNodesOfStackSuccess() {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
@@ -253,14 +253,14 @@ public class RPNTest {
         String expectedResult = "List:\nDecimalNumber:4\nDecimalNumber:2\nDecimalNumber:3\n";
 
         //Act
-        String actualResult = rpn.listNumberNodes(numberOfElementsToList);
+        String actualResult = rpn.listNFirstNodes(numberOfElementsToList);
 
         //Assert
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
-    public void listNumberStackBinarySuccess() {
+    public void listNFirstNodesOfStackBinarySuccess() {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
@@ -271,7 +271,7 @@ public class RPNTest {
         String expectedResult = "List:\nBinaryNumber: 1001001\nBinaryNumber: 10101\n";
 
         //Act
-        String actualResult = rpn.listNumberNodes(numberOfElementsToList);
+        String actualResult = rpn.listNFirstNodes(numberOfElementsToList);
 
         //Assert
         assertEquals(expectedResult, actualResult);
@@ -279,7 +279,7 @@ public class RPNTest {
 
     //US04
     @Test
-    public void listNumberStackTooShortFail() {
+    public void listNFirstNodesOfStackTooShortFail() {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
@@ -289,7 +289,7 @@ public class RPNTest {
         String expectedResult = "The list is smaller than that number";
 
         //Act
-        String actualResult = rpn.listNumberNodes(numberOfElementsToList);
+        String actualResult = rpn.listNFirstNodes(numberOfElementsToList);
 
         //Assert
         assertEquals(expectedResult, actualResult);
@@ -297,14 +297,14 @@ public class RPNTest {
 
     //US04
     @Test
-    public void listNumberStackEmptyFail() {
+    public void listNFirstNodesOfStackEmptyFail() {
         //Arrange
         RPN rpn = new RPN();
         int numberOfElementsToList = 3;
         String expectedResult = "The list is empty";
 
         //Act
-        String actualResult = rpn.listNumberNodes(numberOfElementsToList);
+        String actualResult = rpn.listNFirstNodes(numberOfElementsToList);
 
         //Assert
         assertEquals(expectedResult, actualResult);
