@@ -183,8 +183,4 @@ public class RPN {
             return false;
         }
     }
-
-    public boolean listNumberNodes(int numberOfElementsToList) {
-        return false;
-    }
 }
