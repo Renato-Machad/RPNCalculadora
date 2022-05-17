@@ -1,8 +1,13 @@
 public class RPN {
-    private static Stack stack;
+
+    private Stack stack;
 
     public RPN() {
         stack = new Stack();
+    }
+
+    public void setStack(Stack stack) {
+        this.stack = stack;
     }
 
     public Stack getStack() {
@@ -179,4 +184,7 @@ public class RPN {
         }
     }
 
+    public boolean listNumberNodes(int numberOfElementsToList) {
+        return false;
+    }
 }
