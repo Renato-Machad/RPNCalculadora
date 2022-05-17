@@ -17,7 +17,7 @@ public class BinaryNumber extends GeneralNumber {
 
     @Override
     public int getValue() {
-        return Integer.parseInt(binaryNumber);
+        return Integer.parseInt(binaryNumber, 2);
     }
 
 

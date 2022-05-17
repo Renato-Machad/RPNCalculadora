@@ -165,7 +165,7 @@ public class RPNMockitoTest {
         //Assert
         assertEquals(decimalNumber, stack.pull());
     }
-
+*/
     @Test
     public void divideTestMockitoSuccess() {
         //Arrange
@@ -274,7 +274,7 @@ public class RPNMockitoTest {
         assertFalse(rpn.convertIntoNegative());
     }
 
-
+/*
     @Test
     public void listNFisrtNodesOfStackSuccess() {
         //Arrange
