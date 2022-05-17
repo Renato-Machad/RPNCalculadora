@@ -247,6 +247,15 @@ public class RPNMockitoTest {
     }
 
     @Test
+    public void testMinusWithOneOrLessOperands() {
+        when(mockStack.getSize()).thenReturn(1);
+        assertFalse(rpn.minus());
+
+        when(mockStack.getSize()).thenReturn(0);
+        assertFalse(rpn.minus());
+    }
+
+    @Test
     public void testMinusWithTwoOrMoreBinaryOperands() {
 
         when(mockStack.getSize()).thenReturn(2);
