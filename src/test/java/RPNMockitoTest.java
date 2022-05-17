@@ -81,7 +81,7 @@ public class RPNMockitoTest {
      * este teste não deveria ser feito assim teoricamente porque só queremos testar o comportamento da classe RPN.
      * Todas as outras classes (incluindo a Stack) assume-se sempre que estão a comportar-se de forma pefeita.
      */
-    @Test
+    /*@Test
     public void sumTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -98,9 +98,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(decimalNumber3, stack.pull());
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void sumDoubleCheckTest() {
         //Arrange
         RPN rpn = new RPN();
@@ -117,9 +117,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(decimalNumber3, stack.pull());
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void sumBinaryTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -136,7 +136,7 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(decimalNumber, stack.pull());
-    }
+    }*/
 
     @Test
     public void testMultiplyWithOneOrLessOperands() {
@@ -147,7 +147,7 @@ public class RPNMockitoTest {
         assertFalse(rpn.multiply());
     }
 
-    @Test
+    /*@Test
     public void multiplyBinaryTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -238,54 +238,43 @@ public class RPNMockitoTest {
 
     @Test
     public void convertIntoNegativeTestSuccess() {
-        //Arrange
-        RPN rpn = new RPN();
-        Stack stack = rpn.getStack();
+        when(mockStack.getSize()).thenReturn(1);
         GeneralNumber decimalNumber = new DecimalNumber(2);
-        stack.push(decimalNumber);
-        GeneralNumber expectedResult = new DecimalNumber(-2);
+        when(mockStack.pull()).thenReturn(decimalNumber);
 
-        //Act
-        rpn.convertIntoNegative();
-        Node node = stack.getTop();
+        ArgumentCaptor<DecimalNumber> arg = ArgumentCaptor.forClass(DecimalNumber.class);
 
-        //Assert
-        assertEquals(expectedResult, node.getData());
+        //Verify
+        assertTrue(rpn.convertIntoNegative());
+
+        verify(mockStack).push(arg.capture());
+
+        assertEquals(arg.getValue().getValue(), -2);
     }
 
     @Test
     public void convertIntoNegativeBinaryTestSuccess() {
-        //Arrange
-        RPN rpn = new RPN();
-        Stack stack = rpn.getStack();
-        stack.push(new BinaryNumber("10101"));
-        GeneralNumber expectedResult = new DecimalNumber(-21);
+        when(mockStack.getSize()).thenReturn(1);
+        GeneralNumber binaryNumber = new BinaryNumber("10101");
+        when(mockStack.pull()).thenReturn(binaryNumber);
 
-        //Act
-        rpn.convertIntoNegative();
-        Node node = stack.getTop();
+        ArgumentCaptor<DecimalNumber> arg = ArgumentCaptor.forClass(DecimalNumber.class);
 
-        //Assert
-        assertEquals(expectedResult, node.getData());
+        //Verify
+        assertTrue(rpn.convertIntoNegative());
+
+        verify(mockStack).push(arg.capture());
+
+        assertEquals(arg.getValue().getValue(), -21);
     }
 
-    //erro ortografico
     @Test
-    public void convertIntoNexgativeTestFail() {
-        //Arrange
-        RPN rpn = new RPN();
-        Stack stack = rpn.getStack();
-
-        boolean expectedResult = false;
-
-        //Act
-        rpn.convertIntoNegative();
-
-        //Assert
-        assertEquals(expectedResult, rpn.convertIntoNegative());
+    public void convertIntoNegativeTestFail() {
+        when(mockStack.getSize()).thenReturn(0);
+        assertFalse(rpn.convertIntoNegative());
     }
 
-    //US04
+
     @Test
     public void listNFisrtNodesOfStackSuccess() {
         //Arrange
@@ -303,9 +292,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(expectedResult, actualResult);
-    }
+    }*/
 
-    @Test
+  /*  @Test
     public void listNFirstNodesOfStackBinarySuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -321,9 +310,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(expectedResult, actualResult);
-    }
+    }*/
 
-    //US04
+   /* //US04
     @Test
     public void listNFirstNodesOfStackTooShortFail() {
         //Arrange
@@ -339,9 +328,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(expectedResult, actualResult);
-    }
+    }*/
 
-    //US04
+    /*//US04
     @Test
     public void listNFirstNodesOfStackEmptyFail() {
         //Arrange
@@ -354,9 +343,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(expectedResult, actualResult);
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void duplicateFirstStackElementTestSuccess() {
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
@@ -372,9 +361,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(expectedResult, node.getData());
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void duplicateFirstStackElementBinaryTestSuccess() {
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
@@ -388,5 +377,5 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(expectedResult, node.getData());
-    }
+    }*/
 }
