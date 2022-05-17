@@ -26,9 +26,6 @@ public class RPNCalculatorTest {
     @Mock
     Stack stack;
 
-    //@Mock
-    //Node node;
-
 
 //    @Test
 //    public void mainTest() {
