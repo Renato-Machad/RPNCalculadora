@@ -1,13 +1,10 @@
-import org.junit.Assert;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import java.util.Scanner;
-
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
@@ -25,25 +22,6 @@ public class RPNCalculatorTest {
 
     @Mock
     Stack stack;
-
-    @Mock
-    Node node;
-
-
-//    @Test
-//    public void mainTest() {
-//        int x = 0;
-//
-//        when(rpnCalculator.reader()).thenReturn(1);
-//        //Act
-//        stack.push(decimalNumber);
-//
-//        //Assert
-//        assertEquals(1, stack.getSize());
-//    }
-
-
-
 
     @Test
     public void addDecimalNumberToStackTest() {
