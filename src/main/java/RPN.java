@@ -142,7 +142,7 @@ public class RPN {
         return true;
     }
 
-    public String listNumberNodes(int number) {
+    public String listNFirstNodes(int number) {
         StringBuilder result = new StringBuilder();
         Node aux = stack.getTop();
         if (aux.getNext() != null) {
