@@ -241,7 +241,7 @@ public class RPNTest {
 
     //US04
     @Test
-    public void listNFisrtNodesOfStackSuccess() {
+    public void listNFirstNodesOfStackSuccess() {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();

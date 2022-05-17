@@ -38,7 +38,7 @@ public class RPNCalculator {
                 case 4:
                     System.out.println("How many stack elements would you like to list:");
                     int numberOfElementsToList = read.nextInt();
-                    System.out.println(rpn.listNumberNodes(numberOfElementsToList));
+                    System.out.println(rpn.listNFirstNodes(numberOfElementsToList));
                     break;
 
                 case 5:

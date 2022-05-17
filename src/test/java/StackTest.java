@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class StackTest {
 
     @Test
-    public void addValueToTopEmptyStack() {
+    public void pushValueToTopEmptyStack() {
         //Arrange
         GeneralNumber decimalNumber = new DecimalNumber(1);
         Node node = new Node(decimalNumber);
@@ -21,7 +21,7 @@ public class StackTest {
     }
 
     @Test
-    public void addValueToTopStackAndCompare2EqualStacks() {
+    public void pushValueToTopStackAndCompare2EqualStacks() {
         //Arrange
         DecimalNumber decimalNumber = new DecimalNumber(1);
         Stack stack = new Stack(new Node(decimalNumber));
