@@ -264,19 +264,18 @@ public class RPNMockitoTest {
 
     @Test
     public void convertIntoNegativeTestSuccess() {
-        //Arrange
-        RPN rpn = new RPN();
-        Stack stack = rpn.getStack();
+        when(mockStack.getSize()).thenReturn(1);
         GeneralNumber decimalNumber = new DecimalNumber(2);
-        stack.push(decimalNumber);
-        GeneralNumber expectedResult = new DecimalNumber(-2);
+        when(mockStack.pull()).thenReturn(decimalNumber);
 
-        //Act
-        rpn.convertIntoNegative();
-        Node node = stack.getTop();
+        ArgumentCaptor<DecimalNumber> arg = ArgumentCaptor.forClass(DecimalNumber.class);
 
-        //Assert
-        assertEquals(expectedResult, node.getData());
+        //Verify
+        assertTrue(rpn.convertIntoNegative());
+
+        verify(mockStack).push(arg.capture());
+
+        assertEquals(arg.getValue().getValue(), -2);
     }
 
     @Test
