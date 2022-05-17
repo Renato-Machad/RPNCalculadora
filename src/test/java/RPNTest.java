@@ -225,7 +225,7 @@ public class RPNTest {
 
     //erro ortografico
     @Test
-    public void convertIntoNexgativeTestFail() {
+    public void convertIntoNegativeTestFail() {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();

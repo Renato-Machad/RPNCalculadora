@@ -81,7 +81,7 @@ public class RPNMockitoTest {
      * este teste não deveria ser feito assim teoricamente porque só queremos testar o comportamento da classe RPN.
      * Todas as outras classes (incluindo a Stack) assume-se sempre que estão a comportar-se de forma pefeita.
      */
-    @Test
+    /*@Test
     public void sumTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -98,9 +98,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(decimalNumber3, stack.pull());
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void sumDoubleCheckTest() {
         //Arrange
         RPN rpn = new RPN();
@@ -117,9 +117,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(decimalNumber3, stack.pull());
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void sumBinaryTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -136,7 +136,7 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(decimalNumber, stack.pull());
-    }
+    }*/
 
     @Test
     public void testMultiplyWithOneOrLessOperands() {
@@ -147,7 +147,7 @@ public class RPNMockitoTest {
         assertFalse(rpn.multiply());
     }
 
-    @Test
+    /*@Test
     public void multiplyBinaryTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -164,9 +164,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(decimalNumber, stack.pull());
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void divideTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -182,9 +182,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(expectedResult, stack.pull());
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void divideBinaryTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -201,9 +201,9 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(decimalNumber, stack.pull());
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void divideTestFail() {
         //Arrange
         RPN rpn = new RPN();
@@ -217,7 +217,7 @@ public class RPNMockitoTest {
 
         //Assert
         assertEquals(expectedResult, rpn.divide());
-    }
+    }*/
 
     @Test
     public void testMinusWithTwoOrMoreDecimalOperands() {
@@ -295,20 +295,10 @@ public class RPNMockitoTest {
         assertEquals(expectedResult, node.getData());
     }
 
-    //erro ortografico
     @Test
-    public void convertIntoNexgativeTestFail() {
-        //Arrange
-        RPN rpn = new RPN();
-        Stack stack = rpn.getStack();
-
-        boolean expectedResult = false;
-
-        //Act
-        rpn.convertIntoNegative();
-
-        //Assert
-        assertEquals(expectedResult, rpn.convertIntoNegative());
+    public void convertIntoNegativeTestFail() {
+        when(mockStack.getSize()).thenReturn(0);
+        assertFalse(rpn.convertIntoNegative());
     }
 
     //US04
