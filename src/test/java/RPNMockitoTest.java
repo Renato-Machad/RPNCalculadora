@@ -139,22 +139,12 @@ public class RPNMockitoTest {
     }
 
     @Test
-    public void multiplyTestSuccess() {
-        //Arrange
-        RPN rpn = new RPN();
-        GeneralNumber decimalNumber = new DecimalNumber(2);
-        GeneralNumber decimalNumber2 = new DecimalNumber(3);
-        Stack stack = rpn.getStack();
-        stack.push(decimalNumber);
-        stack.push(decimalNumber2);
-        int expectedResult = 6;
-        GeneralNumber decimalNumber3 = new DecimalNumber(expectedResult);
+    public void testMultiplyWithOneOrLessOperands() {
+        when(mockStack.getSize()).thenReturn(1);
+        assertFalse(rpn.multiply());
 
-        //Act
-        rpn.multiply();
-
-        //Assert
-        assertEquals(decimalNumber3, stack.pull());
+        when(mockStack.getSize()).thenReturn(0);
+        assertFalse(rpn.multiply());
     }
 
     @Test
