@@ -230,42 +230,23 @@ public class RPNMockitoTest {
     }
 
     @Test
-    public void minusTestSuccess() {
-        //Arrange
-        RPN rpn = new RPN();
-        GeneralNumber decimalNumber1 = new DecimalNumber(2);
-        GeneralNumber decimalNumber2 = new DecimalNumber(2);
-        Stack stack = rpn.getStack();
-        stack.push(decimalNumber1);
-        stack.push(decimalNumber2);
-        int expectedResult = 0;
-        GeneralNumber decimalNumber = new DecimalNumber(expectedResult);
+    public void testMinusWithTwoOrMoreDecimalOperands() {
 
-        //Act
-        rpn.minus();
+        when(mockStack.getSize()).thenReturn(2);
+        GeneralNumber decimalNumber = new DecimalNumber(2);
+        when(mockStack.pull()).thenReturn(decimalNumber);
 
-        //Assert
-        assertEquals(decimalNumber, stack.pull());
+        ArgumentCaptor<DecimalNumber> arg = ArgumentCaptor.forClass(DecimalNumber.class);
+
+        //Verify
+        assertTrue(rpn.minus());
+
+        verify(mockStack).push(arg.capture());
+
+        assertEquals(arg.getValue().getValue(), 0);
     }
 
-    @Test
-    public void minusBinaryTestSuccess() {
-        //Arrange
-        RPN rpn = new RPN();
-        GeneralNumber binaryNumber1 = new BinaryNumber("101");
-        GeneralNumber binaryNumber2 = new BinaryNumber("101");
-        Stack stack = rpn.getStack();
-        stack.push(binaryNumber2);
-        stack.push(binaryNumber1);
-        int expectedResult = 0;
-        GeneralNumber decimalNumber = new DecimalNumber(expectedResult);
 
-        //Act
-        rpn.minus();
-
-        //Assert
-        assertEquals(decimalNumber, stack.pull());
-    }
 
     @Test
     public void convertIntoNegativeTestSuccess() {
