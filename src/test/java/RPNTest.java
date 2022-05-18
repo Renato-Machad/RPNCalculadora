@@ -257,6 +257,23 @@ public class RPNTest {
     }
 
     @Test
+    public void convertNegativeNumberTest() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        GeneralNumber decimalNumber = new DecimalNumber(-2);
+        stack.push(decimalNumber);
+        GeneralNumber expectedResult = new DecimalNumber(-2);
+
+        //Act
+        rpn.convertIntoNegative();
+        Node node = stack.getTop();
+
+        //Assert
+        assertEquals(expectedResult, node.getData());
+    }
+
+    @Test
     public void listNFirstNodesOfStackSuccess() {
         //Arrange
         RPN rpn = new RPN();
