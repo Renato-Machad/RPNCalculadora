@@ -153,6 +153,24 @@ public class RPNTest {
     }
 
     @Test
+    public void divideByZeroTest() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+        DecimalNumber a = new DecimalNumber(4);
+        DecimalNumber b = new DecimalNumber(0);
+        stack.push(a);
+        stack.push(b);
+        boolean expectedResult = false;
+
+        //Act
+        rpn.divide();
+
+        //Assert
+        assertEquals(expectedResult, rpn.divide());
+    }
+
+    @Test
     public void minusTestSuccess() {
         //Arrange
         RPN rpn = new RPN();
@@ -223,9 +241,8 @@ public class RPNTest {
         assertEquals(expectedResult, node.getData());
     }
 
-    //erro ortografico
     @Test
-    public void convertIntoNexgativeTestFail() {
+    public void convertIntoNegativeTestFail() {
         //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
@@ -239,7 +256,6 @@ public class RPNTest {
         assertEquals(expectedResult, rpn.convertIntoNegative());
     }
 
-    //US04
     @Test
     public void listNFirstNodesOfStackSuccess() {
         //Arrange
@@ -277,7 +293,6 @@ public class RPNTest {
         assertEquals(expectedResult, actualResult);
     }
 
-    //US04
     @Test
     public void listNFirstNodesOfStackTooShortFail() {
         //Arrange
@@ -295,7 +310,6 @@ public class RPNTest {
         assertEquals(expectedResult, actualResult);
     }
 
-    //US04
     @Test
     public void listNFirstNodesOfStackEmptyFail() {
         //Arrange
