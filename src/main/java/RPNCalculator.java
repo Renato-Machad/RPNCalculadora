@@ -6,7 +6,7 @@ public class RPNCalculator {
         Stack stack = new Stack();
         RPN rpn = new RPN();
         BinaryNumber binary = new BinaryNumber();
-        int value = 0;
+        int value;
 
         System.out.println("---RPN Calculator---\n");
 
@@ -105,7 +105,6 @@ public class RPNCalculator {
 
     public static int reader() {
         Scanner read = new Scanner(System.in);
-        int option = 0;
         System.out.println("\nChoose from the following: \n" +
                 "1 - Add an element to the stack \n" +
                 "2 - Remove the first element from the stack \n" +
