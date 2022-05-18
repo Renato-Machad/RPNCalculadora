@@ -376,4 +376,19 @@ public class RPNTest {
         //Assert
         assertEquals(expectedResult, node.getData());
     }
+
+    @Test
+    public void duplicateFirstStackElementTestFail() {
+        //Arrange
+        RPN rpn = new RPN();
+        Stack stack = rpn.getStack();
+
+        boolean expectedResult = false;
+
+        //Act
+        rpn.duplicateFirstStackElement();
+
+        //Assert
+        assertEquals(expectedResult, rpn.duplicateFirstStackElement());
+    }
 }
