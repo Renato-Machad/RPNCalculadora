@@ -20,6 +20,21 @@ public class StackTest {
     }
 
     @Test
+    public void pushToNullTop() {
+        //Arrange
+        Node top = null;
+        Stack stack = new Stack(top);
+        GeneralNumber decimalNumber = new DecimalNumber(1);
+
+        //Act
+        Stack stackResult = new Stack(top);
+        stackResult.push(decimalNumber);
+
+        //Assert
+        assertEquals(stack.getTop(), stackResult.getTop());
+    }
+
+    @Test
     public void pushValueToTopStackAndCompare2EqualStacks() {
         //Arrange
         DecimalNumber decimalNumber = new DecimalNumber(1);
