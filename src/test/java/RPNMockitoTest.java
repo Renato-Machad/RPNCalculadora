@@ -114,10 +114,6 @@ public class RPNMockitoTest {
 
     @Test
     public void testMinusWithTwoOrMoreBinaryOperands() {
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
         //Arrange
         when(mockStack.getSize()).thenReturn(2);
         GeneralNumber binaryNumber = new BinaryNumber("101");
