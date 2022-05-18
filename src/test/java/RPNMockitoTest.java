@@ -194,18 +194,18 @@ public class RPNMockitoTest {
 
     @Test
     public void testMinusWithTwoOrMoreDecimalOperands() {
-
+        //Arrange
         when(mockStack.getSize()).thenReturn(2);
         GeneralNumber decimalNumber = new DecimalNumber(2);
         when(mockStack.pull()).thenReturn(decimalNumber);
 
         ArgumentCaptor<DecimalNumber> arg = ArgumentCaptor.forClass(DecimalNumber.class);
 
-        //Verify
+        //Act
         assertTrue(rpn.minus());
 
+        //Assert
         verify(mockStack).push(arg.capture());
-
         assertEquals(arg.getValue().getValue(), 0);
     }
 
@@ -221,17 +221,18 @@ public class RPNMockitoTest {
     @Test
     public void testMinusWithTwoOrMoreBinaryOperands() {
 
+        //Arrange
         when(mockStack.getSize()).thenReturn(2);
         GeneralNumber binaryNumber = new BinaryNumber("101");
         when(mockStack.pull()).thenReturn(binaryNumber);
 
         ArgumentCaptor<DecimalNumber> arg = ArgumentCaptor.forClass(DecimalNumber.class);
 
-        //Verify
+        //Act
         assertTrue(rpn.minus());
 
+        //Assert
         verify(mockStack).push(arg.capture());
-
         assertEquals(arg.getValue().getValue(), 0);
     }
 
