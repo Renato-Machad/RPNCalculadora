@@ -25,10 +25,6 @@ public class Node {
         return next;
     }
 
-    public void setNext(Node next) {
-        this.next = next;
-    }
-
     @Override
     public String toString() {
         return "" + data;
