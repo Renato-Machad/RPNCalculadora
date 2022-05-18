@@ -5,6 +5,7 @@ public class RPNCalculator {
     public static void main(String[] args) {
         Stack stack = new Stack();
         RPN rpn = new RPN();
+        BinaryNumber binary = new BinaryNumber();
         int value = 0;
 
         System.out.println("---RPN Calculator---\n");
@@ -81,8 +82,7 @@ public class RPNCalculator {
                     break;
 
                 case 14:
-                    Boolean outcome = rpn.convertIntoNegative();
-                    if (outcome) {
+                    if (rpn.convertIntoNegative()) {
                         System.out.println((stack.getTop()).getData());
                     } else
                         System.out.println("There are no elements in the stack");
@@ -91,9 +91,7 @@ public class RPNCalculator {
                 case 40:
                     System.out.println("Type the expression:");
                     value = read.nextInt();
-                    String valueString = String.valueOf(value);
-                    BinaryNumber binaryNumber2 = new BinaryNumber(valueString);
-                    GeneralNumber binaryNumber = binaryNumber2.decimalToBinary(value);
+                    GeneralNumber binaryNumber = binary.decimalToBinary(value);
                     stack.push(binaryNumber);
                     System.out.println(binaryNumber);
                     break;

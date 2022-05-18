@@ -8,6 +8,8 @@ public class BinaryNumber extends GeneralNumber {
         this.binaryNumber = binaryNumber;
     }
 
+    public BinaryNumber(){}
+
     @Override
     public GeneralNumber decimalToBinary(int value) {
         String binaryString = Integer.toBinaryString(value);
