@@ -23,4 +23,14 @@ public class NodeTest {
 
         assertEquals(node, otherNode);
     }
+
+    @Test
+    public void testEquals_notEqualsObjects() {
+        int num = 10;
+        DecimalNumber decimalNumber = new DecimalNumber(num);
+        Node node = new Node(decimalNumber);
+        Node otherNode = new Node();
+
+        assertNotEquals(node, otherNode);
+    }
 }
