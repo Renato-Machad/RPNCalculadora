@@ -4,7 +4,7 @@ public class BinaryNumber extends GeneralNumber {
 
     private String binaryNumber;
 
-    public BinaryNumber(String binaryNumber){
+    public BinaryNumber(String binaryNumber) {
         this.binaryNumber = binaryNumber;
     }
 
@@ -33,5 +33,4 @@ public class BinaryNumber extends GeneralNumber {
         BinaryNumber that = (BinaryNumber) o;
         return Objects.equals(binaryNumber, that.binaryNumber);
     }
-
 }

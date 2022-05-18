@@ -6,9 +6,9 @@ import static org.junit.Assert.assertNotNull;
 public class DecimalNumberTest {
 
     @Test
-    public void integerToDecimalSuccess(){
+    public void integerToDecimalSuccess() {
         //Arrange
-        int value =5;
+        int value = 5;
 
         //Act
         DecimalNumber result = new DecimalNumber(value);
@@ -16,7 +16,5 @@ public class DecimalNumberTest {
         //Assert
         assertNotNull(result);
     }
-
-
 }
 

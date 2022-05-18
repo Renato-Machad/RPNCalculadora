@@ -1,32 +1,26 @@
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class RPNCalculatorTest {
+public class StackMockitoTest {
 
     @InjectMocks
-    RPNCalculator rpnCalculator;
+    Stack mockStack;
 
     @Mock
     DecimalNumber decimalNumber;
 
-    @Mock
-    RPN rpnMock;
-
-    @Mock
-    Stack stack;
-
     @Test
-    public void addDecimalNumberToStackTest() {
+    public void pushDecimalNumberToStackTest() {
 
-        Stack mockStack = Mockito.mock(Stack.class);
+        mockStack = Mockito.mock(Stack.class);
         when(mockStack.push(decimalNumber)).thenReturn(new DecimalNumber(1));
 
         //Act
@@ -39,7 +33,7 @@ public class RPNCalculatorTest {
     @Test
     public void pullDecimalNumberToStackTest() {
 
-        Stack mockStack = Mockito.mock(Stack.class);
+        mockStack = Mockito.mock(Stack.class);
         when(mockStack.pull()).thenReturn(new DecimalNumber(1));
 
         //Act
@@ -48,7 +42,6 @@ public class RPNCalculatorTest {
         //Assert
         assertEquals(new DecimalNumber(1), expected);
     }
-
 }
 
 

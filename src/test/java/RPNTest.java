@@ -312,6 +312,7 @@ public class RPNTest {
 
     @Test
     public void duplicateFirstStackElementTestSuccess() {
+        //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
         GeneralNumber decimalNumber1 = new DecimalNumber(3);
@@ -330,6 +331,7 @@ public class RPNTest {
 
     @Test
     public void duplicateFirstStackElementBinaryTestSuccess() {
+        //Arrange
         RPN rpn = new RPN();
         Stack stack = rpn.getStack();
         stack.push(new BinaryNumber("101"));

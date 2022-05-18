@@ -1,4 +1,3 @@
-
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -96,7 +95,6 @@ public class StackTest {
         //Assert
         assertEquals(expectedResult, actualResult);
     }
-
 
     //US04
     @Test

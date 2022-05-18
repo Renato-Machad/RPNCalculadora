@@ -23,7 +23,7 @@ public class RPNMockitoTest {
 
 
     /**
-     *  Mock que substitui o atribute 'stack', do tipo Stack, da classe RPN.
+     * Mock que substitui o atribute 'stack', do tipo Stack, da classe RPN.
      */
     @Mock
     Stack mockStack;
@@ -137,7 +137,6 @@ public class RPNMockitoTest {
         //Assert
         assertEquals(decimalNumber, stack.pull());
     }*/
-
     @Test
     public void testMultiplyWithOneOrLessOperands() {
         when(mockStack.getSize()).thenReturn(1);

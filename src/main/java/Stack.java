@@ -52,7 +52,6 @@ public class Stack {
         return top.toString();
     }
 
-
     public String listNodes() {
         StringBuilder result = new StringBuilder();
         Node aux = top;

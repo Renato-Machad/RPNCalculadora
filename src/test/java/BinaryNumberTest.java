@@ -14,7 +14,6 @@ public class BinaryNumberTest {
         BinaryNumber binaryNumber = new BinaryNumber(valueString);
         GeneralNumber result = binaryNumber.decimalToBinary(5);
 
-
         //Assert
         assertEquals(new BinaryNumber(valueString), result);
     }

@@ -7,7 +7,6 @@ public class RPNCalculator {
         RPN rpn = new RPN();
         int value = 0;
 
-
         System.out.println("---RPN Calculator---\n");
 
         Scanner read = new Scanner(System.in);
@@ -83,9 +82,9 @@ public class RPNCalculator {
 
                 case 14:
                     Boolean outcome = rpn.convertIntoNegative();
-                    if (outcome){
-                    System.out.println((stack.getTop()).getData());}
-                    else
+                    if (outcome) {
+                        System.out.println((stack.getTop()).getData());
+                    } else
                         System.out.println("There are no elements in the stack");
                     break;
 

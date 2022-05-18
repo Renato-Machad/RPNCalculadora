@@ -29,5 +29,4 @@ public class DecimalNumber extends GeneralNumber {
         DecimalNumber that = (DecimalNumber) o;
         return decimalNumber == that.decimalNumber;
     }
-
 }
