@@ -8,7 +8,7 @@ public class BinaryNumberTest {
     public void integerToString() {
         //Arrange
         int value = 101;
-        String valueString = String.valueOf(value); // "5"
+        String valueString = String.valueOf(value);
 
         //Act
         BinaryNumber binaryNumber = new BinaryNumber(valueString);

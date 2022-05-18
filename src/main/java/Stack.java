@@ -16,13 +16,12 @@ public class Stack {
         return size;
     }
 
-    //Este método deve devolver uma cópia do top para o proteger e nao ser alterado/apagado
     public Node getTop() {
         return new Node(top.getData(), top.getNext());
     }
 
     public GeneralNumber push(GeneralNumber data) {
-        if (top == null) // stack nao tem nada
+        if (top == null)
             top = new Node(data);
         else {
             Node current = new Node(data, top);

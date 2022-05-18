@@ -119,7 +119,7 @@ public class RPNCalculator {
                 "14 - Replace the first element of the stack by its negative \n" +
                 "40 - Add decimal number to convert to binary\n" +
                 "99 - Quit");
-        return option = read.nextInt();
+        return read.nextInt();
     }
 }
 

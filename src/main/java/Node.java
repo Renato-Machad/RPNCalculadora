@@ -3,7 +3,7 @@ import java.util.Objects;
 public class Node {
 
     private GeneralNumber data;
-    private Node next; //proximo elemento da lista, referência ou apontador para o seguinte
+    private Node next;
 
     public Node() {
     }
