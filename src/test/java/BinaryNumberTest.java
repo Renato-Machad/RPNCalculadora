@@ -30,4 +30,14 @@ public class BinaryNumberTest {
         //Assert
         assertEquals(number, resultNumber);
     }
+
+    @Test
+    public void emptyConstructor() {
+        //Arrange
+        BinaryNumber binaryNumber = new BinaryNumber();
+        BinaryNumber other = new BinaryNumber();
+        
+        //Assert
+        assertEquals(binaryNumber, other);
+    }
 }
